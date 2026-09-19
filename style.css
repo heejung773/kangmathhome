@@ -479,8 +479,92 @@ ul {
   background: var(--border-subtle);
 }
 
+/* Hero Visual & Instructor */
+.hero-visual {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.hero-instructor-wrap {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  margin-bottom: -36px;
+  z-index: 2;
+  width: 100%;
+  max-width: 320px;
+}
+
+.hero-instructor-img {
+  max-height: 380px;
+  width: auto;
+  max-width: 100%;
+  object-fit: contain;
+  filter: drop-shadow(0 15px 35px rgba(0, 0, 0, 0.7)) drop-shadow(0 0 35px rgba(59, 130, 246, 0.4));
+  transition: var(--transition-smooth);
+  animation: floatSubtle 4s ease-in-out infinite;
+}
+
+@keyframes floatSubtle {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+.instructor-image-glow-bg {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(37, 99, 235, 0.45) 0%, rgba(6, 182, 212, 0.2) 50%, transparent 70%);
+  filter: blur(20px);
+  z-index: -1;
+  pointer-events: none;
+}
+
+.hero-floating-badge {
+  position: absolute;
+  bottom: 25px;
+  right: -15px;
+  background: rgba(15, 23, 42, 0.92);
+  border: 1px solid rgba(59, 130, 246, 0.5);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  padding: 10px 18px;
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6), 0 0 20px rgba(59, 130, 246, 0.3);
+  z-index: 3;
+}
+
+.hero-floating-badge .badge-icon {
+  font-size: 1.4rem;
+}
+
+.badge-text-group strong {
+  display: block;
+  font-size: 0.92rem;
+  color: #fbbf24;
+  line-height: 1.2;
+}
+
+.badge-text-group span {
+  font-size: 0.78rem;
+  color: #cbd5e1;
+}
+
 /* Glass Hero Card */
 .glass-hero-card {
+  width: 100%;
+  margin-top: 0;
+  z-index: 1;
   background: var(--bg-card);
   backdrop-filter: blur(24px);
   -webkit-backdrop-filter: blur(24px);
@@ -689,7 +773,7 @@ ul {
   background: linear-gradient(145deg, #111a2e, #090e1a);
   border: 1px solid var(--border-glow);
   border-radius: var(--radius-lg);
-  padding: 40px;
+  padding: 36px 28px 24px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -697,29 +781,51 @@ ul {
   overflow: hidden;
 }
 
-.instructor-logo-glow {
-  max-width: 220px;
-  width: 100%;
-  height: auto;
-  border-radius: 12px;
-  background: #ffffff;
-  padding: 8px;
-  box-shadow: 0 0 40px rgba(59, 130, 246, 0.4);
-  margin-bottom: 24px;
+.instructor-photo-backdrop {
+  position: absolute;
+  top: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 260px;
+  height: 260px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(239, 68, 68, 0.25) 0%, rgba(245, 158, 11, 0.1) 50%, transparent 70%);
+  filter: blur(25px);
+  z-index: 0;
+  pointer-events: none;
+}
+
+.instructor-photo-main {
+  position: relative;
+  z-index: 1;
+  max-height: 420px;
+  width: auto;
+  max-width: 100%;
+  object-fit: contain;
+  filter: drop-shadow(0 15px 30px rgba(0, 0, 0, 0.7)) drop-shadow(0 0 25px rgba(239, 68, 68, 0.25));
+  margin-bottom: 16px;
+  transition: var(--transition-smooth);
+}
+
+.instructor-photo-main:hover {
+  transform: scale(1.02);
 }
 
 .photo-overlay-card {
+  position: relative;
+  z-index: 2;
   text-align: center;
   width: 100%;
 }
 
 .badge-role {
   display: inline-block;
-  background: rgba(59, 130, 246, 0.2);
-  color: #60a5fa;
+  background: rgba(239, 68, 68, 0.15);
+  color: #f87171;
+  border: 1px solid rgba(239, 68, 68, 0.3);
   font-size: 0.8rem;
   font-weight: 600;
-  padding: 4px 12px;
+  padding: 4px 14px;
   border-radius: var(--radius-full);
   margin-bottom: 8px;
 }
@@ -809,6 +915,231 @@ ul {
 .eq-body p {
   font-size: 0.9rem;
   color: var(--text-light);
+}
+
+/* Original Textbooks Section */
+.textbooks-section {
+  background: radial-gradient(circle at 20% 50%, rgba(37, 99, 235, 0.08), transparent 50%), var(--bg-dark);
+  border-top: 1px solid var(--border-subtle);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.textbooks-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+  gap: 28px;
+}
+
+.textbook-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  transition: var(--transition-smooth);
+  position: relative;
+}
+
+.textbook-card:hover {
+  transform: translateY(-8px);
+  border-color: var(--border-glow);
+  box-shadow: var(--shadow-card), 0 0 30px rgba(59, 130, 246, 0.25);
+  background: var(--bg-card-hover);
+}
+
+.textbook-card.featured-book {
+  border-color: rgba(59, 130, 246, 0.4);
+  background: linear-gradient(180deg, rgba(26, 41, 74, 0.8), rgba(15, 23, 42, 0.9));
+}
+
+.book-badge-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.book-badge {
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: var(--radius-full);
+  background: rgba(59, 130, 246, 0.2);
+  color: #60a5fa;
+  border: 1px solid rgba(59, 130, 246, 0.4);
+}
+
+.book-badge.gold {
+  background: rgba(245, 158, 11, 0.2);
+  color: #fbbf24;
+  border-color: rgba(245, 158, 11, 0.4);
+}
+
+.book-badge.cyan {
+  background: rgba(6, 182, 212, 0.2);
+  color: #22d3ee;
+  border-color: rgba(6, 182, 212, 0.4);
+}
+
+.book-badge.red {
+  background: rgba(239, 68, 68, 0.2);
+  color: #f87171;
+  border-color: rgba(239, 68, 68, 0.4);
+}
+
+.book-target {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
+/* 3D Book Cover Mockup */
+.book-cover-mockup {
+  position: relative;
+  height: 220px;
+  margin: 0 auto 24px;
+  display: flex;
+  justify-content: center;
+  perspective: 800px;
+}
+
+.book-front {
+  width: 170px;
+  height: 220px;
+  border-radius: 4px 10px 10px 4px;
+  padding: 20px 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 8px 12px 25px rgba(0, 0, 0, 0.7), inset 4px 0 8px rgba(255, 255, 255, 0.1);
+  transform: rotateY(-10deg);
+  transition: transform 0.4s ease;
+  border-left: 5px solid rgba(0, 0, 0, 0.4);
+}
+
+.textbook-card:hover .book-front {
+  transform: rotateY(0deg) scale(1.04);
+}
+
+.book-front.blue-theme {
+  background: linear-gradient(135deg, #1e3a8a, #0f172a);
+  border-top: 2px solid #60a5fa;
+}
+
+.book-front.gold-theme {
+  background: linear-gradient(135deg, #78350f, #1e1e1e);
+  border-top: 2px solid #fbbf24;
+}
+
+.book-front.cyan-theme {
+  background: linear-gradient(135deg, #164e63, #0f172a);
+  border-top: 2px solid #22d3ee;
+}
+
+.book-front.red-theme {
+  background: linear-gradient(135deg, #881337, #1e1e1e);
+  border-top: 2px solid #f87171;
+}
+
+.book-series {
+  font-size: 0.6rem;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  color: rgba(255, 255, 255, 0.7);
+  text-transform: uppercase;
+}
+
+.book-title {
+  font-size: 1.05rem;
+  font-weight: 800;
+  line-height: 1.25;
+  color: #ffffff;
+  margin-top: 6px;
+}
+
+.book-sub {
+  font-size: 0.82rem;
+  color: #93c5fd;
+  font-weight: 700;
+}
+
+.book-slogan {
+  font-size: 0.65rem;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.35;
+  margin: 6px 0;
+}
+
+.book-author {
+  font-size: 0.68rem;
+  color: rgba(255, 255, 255, 0.5);
+  align-self: flex-end;
+}
+
+.book-info {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.book-name {
+  font-size: 1.15rem;
+  margin-bottom: 8px;
+  color: #ffffff;
+}
+
+.book-intro {
+  font-size: 0.88rem;
+  color: var(--text-light);
+  line-height: 1.6;
+  margin-bottom: 16px;
+  word-break: keep-all;
+}
+
+.book-features {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 20px;
+  border-top: 1px solid var(--border-subtle);
+  padding-top: 14px;
+  flex-grow: 1;
+}
+
+.book-features li {
+  font-size: 0.84rem;
+  color: var(--text-muted);
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  line-height: 1.45;
+}
+
+.book-features li span {
+  color: #10b981;
+  font-weight: bold;
+  flex-shrink: 0;
+}
+
+.book-footer {
+  border-top: 1px solid var(--border-subtle);
+  padding-top: 16px;
+}
+
+.book-link-btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: #38bdf8;
+  transition: var(--transition-smooth);
+}
+
+.book-link-btn:hover {
+  color: #93c5fd;
+  transform: translateX(4px);
 }
 
 /* Target Schools Section */
