@@ -1,0 +1,820 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>강석수학 | 흔들리지 않는 1등급의 기준 - kangmath.com</title>
+  <meta name="description" content="수학은 언어이자 논리입니다. 20년 입시 경력 이강석T의 고등 수학 전문 브랜드 강석수학. 동화고·다산고·도농고·와부고·인창고 내신 분석 및 수능 1등급 완성.">
+  <meta name="keywords" content="강석수학, kangmath, 강석수학.com, 이강석수학, 다산미래학원, 다산수학학원, 동화고수학, 다산고수학, 와부고수학, 도농고수학, 고등수학, 수능수학, 자물쇠반">
+  
+  <!-- Open Graph / SNS Share -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://kangmath.com/">
+  <meta property="og:title" content="강석수학 (KANG MATH) - 흔들리지 않는 1등급의 기준">
+  <meta property="og:description" content="수학은 언어이자 논리입니다. 20년 경력 이강석 선생님의 다산·구리·남양주 맞춤 고등 수학.">
+  <meta property="og:image" content="./assets/logo.png">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="./assets/logo.png">
+
+  <!-- Google Fonts & Pretendard -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&family=Plus+Jakarta+Sans:wght@500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Background Canvas for Interactive Mathematical Geometry -->
+  <canvas id="math-canvas"></canvas>
+
+  <!-- Top Announcement Bar -->
+  <div class="top-bar">
+    <div class="container top-bar-content">
+      <div class="announcement">
+        <span class="badge-pill">공지</span>
+        <span class="text">2026학년도 2학기 내신 대비반 & 예비고1 고교선택 전략반 모집 중</span>
+      </div>
+      <div class="top-links">
+        <a href="https://blog.naver.com/iji99" target="_blank" rel="noopener" class="top-link">
+          <svg class="icon-svg" viewBox="0 0 24 24"><path fill="currentColor" d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14h-4v-4h4v4zm0-6h-4V7h4v4z"/></svg>
+          공식 블로그
+        </a>
+        <a href="https://www.youtube.com/@강석수학" target="_blank" rel="noopener" class="top-link youtube">
+          <svg class="icon-svg" viewBox="0 0 24 24"><path fill="currentColor" d="M21.58 7.19c-.23-.86-.91-1.54-1.77-1.77C18.25 5 12 5 12 5s-6.25 0-7.81.42c-.86.23-1.54.91-1.77 1.77C2 8.75 2 12 2 12s0 3.25.42 4.81c.23.86.91 1.54 1.77 1.77C5.75 19 12 19 12 19s6.25 0 7.81-.42c.86-.23 1.54-.91 1.77-1.77C22 15.25 22 12 22 12s0-3.25-.42-4.81zM10 15V9l5.2 3-5.2 3z"/></svg>
+          유튜브 채널
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header Navigation -->
+  <header class="header" id="header">
+    <div class="container header-container">
+      <a href="#" class="logo-group">
+        <img src="./assets/logo.png" alt="강석수학 로고" class="brand-logo">
+        <div class="brand-text">
+          <span class="logo-title">강석수학</span>
+          <span class="logo-sub">KANG MATH</span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav Menu -->
+      <nav class="nav-menu" id="nav-menu">
+        <a href="#about" class="nav-link">강사 소개</a>
+        <a href="#schools" class="nav-link">학교별 내신전략</a>
+        <a href="#system" class="nav-link">학습 시스템</a>
+        <a href="#curriculum" class="nav-link">커리큘럼</a>
+        <a href="#media" class="nav-link">유튜브 & 블로그</a>
+        <a href="#location" class="nav-link">오시는 길</a>
+        <a href="#consultation" class="nav-cta-btn mobile-only">1:1 상담 신청</a>
+      </nav>
+
+      <div class="header-actions">
+        <a href="#consultation" class="nav-cta-btn desktop-only">1:1 맞춤 상담 신청</a>
+        <button class="mobile-menu-btn" id="mobile-toggle" aria-label="메뉴 열기">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero-section" id="home">
+    <div class="container hero-grid">
+      <div class="hero-content">
+        <div class="hero-badge">
+          <span class="pulse-dot"></span>
+          <span>20년 입시 경력 · 다산미래학원 고등부 대표강사</span>
+        </div>
+        <h1 class="hero-title">
+          수학은 <span class="gradient-text">언어</span>이자 <span class="gradient-text">논리</span>입니다.<br>
+          흔들리지 않는 1등급, <span class="highlight-gold">강석수학</span>
+        </h1>
+        <p class="hero-desc">
+          공식을 단순 암기하는 것은 반드시 한계에 부딪힙니다.<br>
+          <strong>동화고·다산고·도농고·와부고·인창고</strong> 등 학교별 내신 출제 패턴 정밀 해부부터 
+          수능 킬러 문항까지, 증명과 원리로 수학의 본질을 꿰뚫습니다.
+        </p>
+        <div class="hero-buttons">
+          <a href="#consultation" class="btn btn-primary">
+            <span>1:1 입학 및 레벨테스트 신청</span>
+            <svg class="btn-arrow" viewBox="0 0 24 24"><path fill="currentColor" d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <a href="https://www.youtube.com/@강석수학" target="_blank" rel="noopener" class="btn btn-secondary">
+            <svg class="yt-icon" viewBox="0 0 24 24"><path fill="currentColor" d="M10 15l5.2-3L10 9v6z"/></svg>
+            <span>유튜브 손풀이 해설 시청</span>
+          </a>
+        </div>
+
+        <!-- Metric Counters -->
+        <div class="hero-metrics">
+          <div class="metric-item">
+            <div class="metric-number"><span class="counter" data-target="20">0</span><span class="unit">년+</span></div>
+            <div class="metric-label">수학 지도 전문 경력</div>
+          </div>
+          <div class="metric-divider"></div>
+          <div class="metric-item">
+            <div class="metric-number"><span class="counter" data-target="7">0</span><span class="unit">개교</span></div>
+            <div class="metric-label">다산·남양주 맞춤 내신 분석</div>
+          </div>
+          <div class="metric-divider"></div>
+          <div class="metric-item">
+            <div class="metric-number"><span class="counter" data-target="100">0</span><span class="unit">%</span></div>
+            <div class="metric-label">자체 개념서 <수학은 개념을 사랑해></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="glass-hero-card">
+          <div class="card-header">
+            <span class="badge-tag">KANG MATH IDENTITY</span>
+            <span class="card-status">● LIVE 2학기 정규반</span>
+          </div>
+          <div class="quote-box">
+            <div class="quote-mark">“</div>
+            <p class="quote-text">
+              "공식을 외운 것이 아니라,<br>
+              <strong>개념을 완벽히 이해하고 설명할 수 있을 때</strong><br>
+              수학 1등급의 문이 열립니다."
+            </p>
+            <div class="quote-author">
+              <strong>이강석 원장</strong>
+              <span>강석수학 대표 강사</span>
+            </div>
+          </div>
+
+          <div class="signature-features">
+            <div class="feat-item">
+              <div class="feat-icon">📖</div>
+              <div class="feat-text">
+                <strong>자체 개념서 <수학은 개념을 사랑해></strong>
+                <span>암기를 배제하고 원리부터 증명까지 체화</span>
+              </div>
+            </div>
+            <div class="feat-item">
+              <div class="feat-icon">🔒</div>
+              <div class="feat-text">
+                <strong>Summer/Winter Lock & Study</strong>
+                <span>핸드폰 차단, 순수 공부시간 극대화 자물쇠반</span>
+              </div>
+            </div>
+            <div class="feat-item">
+              <div class="feat-icon">✍️</div>
+              <div class="feat-text">
+                <strong>학교별 기출 손글씨 풀이 직강</strong>
+                <span>시험 직후 전 문항 출제 의도 정밀 분석</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="card-footer-action">
+            <a href="https://blog.naver.com/iji99" target="_blank" rel="noopener" class="blog-preview-btn">
+              <span>네이버 공식 블로그 칼럼 읽기</span>
+              <span class="arrow">→</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Instructor Section -->
+  <section class="section about-section" id="about">
+    <div class="container">
+      <div class="section-head text-center">
+        <span class="section-sub">DIRECTOR PROFILE</span>
+        <h2 class="section-title">20년 입시 수학의 깊이, <span class="highlight">이강석 선생님</span></h2>
+        <p class="section-desc">
+          수학을 두려워하던 학생이 자신감을 찾고, 3등급에서 당당히 1등급을 쟁취하는 이유.<br>
+          학생 한 명 한 명의 오답 패턴을 꿰뚫고 있는 20년 내공의 차이를 경험하십시오.
+        </p>
+      </div>
+
+      <div class="about-grid">
+        <div class="about-photo-card">
+          <div class="photo-container">
+            <img src="./assets/logo.png" alt="이강석 선생님 강석수학" class="instructor-logo-glow">
+            <div class="photo-overlay-card">
+              <span class="badge-role">고등부 수학 전문</span>
+              <h3>이강석 대표 강사</h3>
+              <p>다산미래학원 고등부 대표 / 유튜브 '강석수학' 운영</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="about-info-col">
+          <div class="philosophy-card">
+            <h3 class="philosophy-title">💡 강석수학의 3대 교육 원칙</h3>
+            <div class="principle-list">
+              <div class="principle-item">
+                <div class="p-num">01</div>
+                <div class="p-content">
+                  <h4>공식 나열이 아닌 개념의 유기적 구조화</h4>
+                  <p>미적분과 대수는 개념의 층위가 촘촘합니다. 기본 정의에서 시작해 실전 킬러 문항까지 개념이 어떻게 도구로 변환되는지 스스로 증명하게 만듭니다.</p>
+                </div>
+              </div>
+              <div class="principle-item">
+                <div class="p-num">02</div>
+                <div class="p-content">
+                  <h4>학교별 맞춤형 내신 킬러 & 서술형 방어</h4>
+                  <p>동화고의 고난도 변별력 문항, 다산고의 계산 실수 유발 포인트, 와부고의 논리 전개 등 학교별 출제 경향을 10개년 데이터로 예측하고 대비합니다.</p>
+                </div>
+              </div>
+              <div class="principle-item">
+                <div class="p-num">03</div>
+                <div class="p-content">
+                  <h4>배운 것을 내 것으로 만드는 '순공' 자물쇠 관리</h4>
+                  <p>좋은 수업을 들어도 스스로 손으로 풀며 체화하지 않으면 성적은 멈춥니다. 자물쇠반(Lock & Study)을 통해 학습 태도와 루틴까지 완벽히 개조합니다.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="exam-quote-banner">
+            <div class="eq-icon">📐</div>
+            <div class="eq-body">
+              <strong>“입시는 산수입니다. 18,503만 알면 됩니다.”</strong>
+              <p>중3의 고교 선택부터 고교학점제, 2028 대입 개편안(내신 5등급제 + 통합수능)까지 막연한 불안감을 명쾌한 데이터와 숫자로 해결해 드립니다.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Target Schools Strategy Section -->
+  <section class="section schools-section" id="schools">
+    <div class="container">
+      <div class="section-head text-center">
+        <span class="section-sub">CUSTOMIZED STRATEGY</span>
+        <h2 class="section-title">구리·남양주 주요 고교 <span class="highlight">내신 정밀 분석</span></h2>
+        <p class="section-desc">
+          학교마다 시험지의 결이 다릅니다. 학교별 기출 패턴을 정확히 알아야 50분의 시험 시간 안에 1등급을 거머쥘 수 있습니다.
+        </p>
+      </div>
+
+      <!-- School Tabs -->
+      <div class="school-tab-buttons" id="school-tabs">
+        <button class="school-btn active" data-school="donghwa">동화고</button>
+        <button class="school-btn" data-school="dasan">다산고</button>
+        <button class="school-btn" data-school="donong">도농고</button>
+        <button class="school-btn" data-school="wabu">와부고</button>
+        <button class="school-btn" data-school="inchang">인창고</button>
+        <button class="school-btn" data-school="pyeongnae">평내고·가운고</button>
+      </div>
+
+      <!-- School Content Display -->
+      <div class="school-detail-card" id="school-content">
+        <!-- Content inserted dynamically via main.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Signature Learning System Section -->
+  <section class="section system-section" id="system">
+    <div class="container">
+      <div class="section-head text-center">
+        <span class="section-sub">KANGMATH 4-STEP SYSTEM</span>
+        <h2 class="section-title">결과를 만들어내는 <span class="highlight">4단계 압도적 관리 시스템</span></h2>
+        <p class="section-desc">
+          단순한 진도 빼기는 그만. 개념 습득에서부터 실전 시험장 1등급까지 이어지는 완벽한 선순환 루프.
+        </p>
+      </div>
+
+      <div class="system-grid">
+        <!-- Step 1 -->
+        <div class="system-card">
+          <div class="step-badge">STEP 01</div>
+          <div class="card-icon">🧠</div>
+          <h3 class="card-title">개념 구조화</h3>
+          <h4 class="card-sub"><수학은 개념을 사랑해></h4>
+          <p class="card-text">
+            단순 공식 암기를 철저히 배제하고 개념의 유도 과정과 증명을 100% 학생 스스로 쓸 수 있도록 구조화합니다.
+          </p>
+          <ul class="check-list">
+            <li>단원별 개념 백지 테스트</li>
+            <li>정의에 기반한 유도 원리 훈련</li>
+            <li>개념 간 연결고리 도식화</li>
+          </ul>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="system-card">
+          <div class="step-badge">STEP 02</div>
+          <div class="card-icon">🎯</div>
+          <h3 class="card-title">유형 체화 & 변형</h3>
+          <h4 class="card-sub">학교별 기출 10개년 완벽 분석</h4>
+          <p class="card-text">
+            구리·남양주 주요 고교의 10개년 기출과 평가원·교육청 우수 문항을 융합하여 변형 문제에도 흔들리지 않는 문제해결력을 구축합니다.
+          </p>
+          <ul class="check-list">
+            <li>준킬러 문항 조건 해석 훈련</li>
+            <li>시간 단축 실전 스킬 전수</li>
+            <li>서술형 감점 제로 피드백</li>
+          </ul>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="system-card highlight-card">
+          <div class="step-badge lock-badge">STEP 03</div>
+          <div class="card-icon">🔒</div>
+          <h3 class="card-title">Lock & Study (자물쇠반)</h3>
+          <h4 class="card-sub">스마트폰 차단 · 순공 극대화</h4>
+          <p class="card-text">
+            "학원만 다닌다고 성적이 오르지 않습니다." 방학 및 시험 기간 동안 스마트폰을 수거하고 스스로 몰입하는 절대 공부 시간을 강제 확보합니다.
+          </p>
+          <ul class="check-list">
+            <li>의무 자습 및 밀착 출결 관리</li>
+            <li>일일 목표 달성도 점검</li>
+            <li>학습 루틴 및 태도 개조</li>
+          </ul>
+        </div>
+
+        <!-- Step 4 -->
+        <div class="system-card">
+          <div class="step-badge">STEP 04</div>
+          <div class="card-icon">🩺</div>
+          <h3 class="card-title">1:1 무한 오답 클리닉</h3>
+          <h4 class="card-sub">틀린 문제는 완벽히 이해할 때까지</h4>
+          <p class="card-text">
+            학생마다 틀리는 이유는 다릅니다. 계산 실수인지, 개념 누락인지, 발상 부족인지 이강석 원장이 직접 1:1로 원인을 분석하고 처방합니다.
+          </p>
+          <ul class="check-list">
+            <li>개인별 맞춤 오답 노트 생성</li>
+            <li>동일 유형 유사 문항 3배수 풀이</li>
+            <li>원장 직접 대면 질의응답</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Curriculum Section -->
+  <section class="section curriculum-section" id="curriculum">
+    <div class="container">
+      <div class="section-head text-center">
+        <span class="section-sub">CURRICULUM</span>
+        <h2 class="section-title">학년별 맞춤 <span class="highlight">정규 커리큘럼</span></h2>
+        <p class="section-desc">
+          중3 예비고1부터 고3 수능 및 수리논술까지 체계적인 단계별 학습 로드맵을 제공합니다.
+        </p>
+      </div>
+
+      <!-- Curriculum Tabs -->
+      <div class="curriculum-tab-container">
+        <div class="curri-tabs" id="curri-tabs">
+          <button class="curri-tab-btn active" data-curri="pre-high">예비고1 (중3)</button>
+          <button class="curri-tab-btn" data-curri="high1">고등학교 1학년</button>
+          <button class="curri-tab-btn" data-curri="high2">고등학교 2학년</button>
+          <button class="curri-tab-btn" data-curri="high3">고3 & 수능대비</button>
+        </div>
+
+        <div class="curri-content-box" id="curri-content">
+          <!-- Dynamic Content by JS -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- YouTube & Naver Blog Media Section -->
+  <section class="section media-section" id="media">
+    <div class="container">
+      <div class="section-head text-center">
+        <span class="section-sub">OFFICIAL CHANNELS</span>
+        <h2 class="section-title">유튜브 <span class="yt-color">@강석수학</span> & 네이버 <span class="blog-color">공식 블로그</span></h2>
+        <p class="section-desc">
+          손글씨 기출 풀이 영상과 입시 트렌드 칼럼을 지금 바로 확인해 보세요.
+        </p>
+      </div>
+
+      <div class="media-grid">
+        <!-- YouTube Channel Highlight -->
+        <div class="media-column">
+          <div class="media-card-header youtube-header">
+            <div class="header-left">
+              <svg class="media-icon yt" viewBox="0 0 24 24"><path fill="currentColor" d="M21.58 7.19c-.23-.86-.91-1.54-1.77-1.77C18.25 5 12 5 12 5s-6.25 0-7.81.42c-.86.23-1.54.91-1.77 1.77C2 8.75 2 12 2 12s0 3.25.42 4.81c.23.86.91 1.54 1.77 1.77C22 15.25 22 12 22 12s0-3.25-.42-4.81zM10 15V9l5.2 3-5.2 3z"/></svg>
+              <div>
+                <h3>유튜브 '강석수학' 채널</h3>
+                <span>시험 직후 가장 빠른 손풀이 해설 영상</span>
+              </div>
+            </div>
+            <a href="https://www.youtube.com/@강석수학" target="_blank" rel="noopener" class="channel-btn yt-btn">채널 구독하기</a>
+          </div>
+
+          <div class="video-list">
+            <a href="https://www.youtube.com/@강석수학" target="_blank" rel="noopener" class="video-card">
+              <div class="video-thumbnail-placeholder">
+                <span class="play-btn-circle">▶</span>
+                <span class="video-tag">모의고사 해설</span>
+              </div>
+              <div class="video-info">
+                <h4>2026 고2 9월 모의고사 수학 킬러 문항 정밀 해설 직강</h4>
+                <p>대수 전 범위 총정리 및 다가올 고3 수능 대비 핵심 발상 해법</p>
+              </div>
+            </a>
+
+            <a href="https://www.youtube.com/@강석수학" target="_blank" rel="noopener" class="video-card">
+              <div class="video-thumbnail-placeholder">
+                <span class="play-btn-circle">▶</span>
+                <span class="video-tag">내신 기출 분석</span>
+              </div>
+              <div class="video-info">
+                <h4>동화고·와부고 고1 1학기 기말고사 최고난도 손글씨 풀이</h4>
+                <p>출제자의 함정 포인트 파악 및 5분 단축 실전 테크닉 공개</p>
+              </div>
+            </a>
+
+            <a href="https://www.youtube.com/@강석수학" target="_blank" rel="noopener" class="video-card">
+              <div class="video-thumbnail-placeholder">
+                <span class="play-btn-circle">▶</span>
+                <span class="video-tag">개념 특강</span>
+              </div>
+              <div class="video-info">
+                <h4>수학은 개념을 사랑해 - 미적분 극한과 도함수의 기하학적 직관</h4>
+                <p>공식 없이 개념의 시각화만으로 4점 문항을 풀어내는 원리</p>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <!-- Naver Blog Highlight -->
+        <div class="media-column">
+          <div class="media-card-header blog-header">
+            <div class="header-left">
+              <div class="naver-icon">N</div>
+              <div>
+                <h3>네이버 공식 블로그</h3>
+                <span>blog.naver.com/iji99</span>
+              </div>
+            </div>
+            <a href="https://blog.naver.com/iji99" target="_blank" rel="noopener" class="channel-btn blog-btn">블로그 이웃추가</a>
+          </div>
+
+          <div class="blog-list">
+            <a href="https://blog.naver.com/iji99" target="_blank" rel="noopener" class="blog-post-card">
+              <div class="post-category">트렌드 및 대입정보</div>
+              <h4 class="post-title">2026년 9월 고2 모의고사 수학 등급 컷 및 주요 문항 정밀 분석</h4>
+              <p class="post-desc">수험생으로서의 실질적인 첫걸음, 대수 전 범위를 아우르는 진정한 평가 무대 철저 분석.</p>
+              <div class="post-meta">
+                <span>다산미래 이강석T</span>
+                <span class="post-date">2026.09</span>
+              </div>
+            </a>
+
+            <a href="https://blog.naver.com/iji99" target="_blank" rel="noopener" class="blog-post-card">
+              <div class="post-category">트렌드 및 대입정보</div>
+              <h4 class="post-title">2026 고1 9월 모의고사 수학 분석 | 등급컷·오답률 높은 문항 총정리</h4>
+              <p class="post-desc">2022 개정 교육과정 세대의 시험 출제 경향 및 오답률 높은 킬러/준킬러 해법 공개.</p>
+              <div class="post-meta">
+                <span>다산미래 이강석T</span>
+                <span class="post-date">2026.09</span>
+              </div>
+            </a>
+
+            <a href="https://blog.naver.com/iji99" target="_blank" rel="noopener" class="blog-post-card">
+              <div class="post-category">입시/학습전략</div>
+              <h4 class="post-title">중3 고교 선택 가이드: 입시는 산수입니다, '18,503'만 알면 됩니다</h4>
+              <p class="post-desc">자사고, 특목고, 일반고 선택의 기준. 복잡한 입시를 가장 명쾌한 숫자로 풀어냅니다.</p>
+              <div class="post-meta">
+                <span>다산미래 이강석T</span>
+                <span class="post-date">2026.08</span>
+              </div>
+            </a>
+
+            <a href="https://blog.naver.com/iji99" target="_blank" rel="noopener" class="blog-post-card">
+              <div class="post-category">수업안내</div>
+              <h4 class="post-title">"성적이 안 오르는 진짜 이유?" - Summer Lock & Study (자물쇠반)</h4>
+              <p class="post-desc">수업을 듣는 것과 공부가 완성되는 것은 다릅니다. 배운 걸 내 것으로 만드는 순공 시간의 비밀.</p>
+              <div class="post-meta">
+                <span>다산미래 이강석T</span>
+                <span class="post-date">2026.07</span>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="section faq-section" id="faq">
+    <div class="container">
+      <div class="section-head text-center">
+        <span class="section-sub">FAQ</span>
+        <h2 class="section-title">학부모님과 학생들이 <span class="highlight">자주 묻는 질문</span></h2>
+      </div>
+
+      <div class="faq-accordion">
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>수학 진도가 늦거나 기본기가 부족한 학생도 수강할 수 있나요?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>네, 가능합니다. 강석수학은 입학 전 정밀 레벨테스트를 통해 학생의 결손 지점을 정확히 진단합니다. 자체 제작 개념서 <수학은 개념을 사랑해>와 1:1 맞춤 클리닉을 통해 구멍 난 하위 개념을 단기간에 메우고 본 정규 수업에 완벽히 안착시킵니다.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>학교별 내신 대비는 어떻게 이루어지나요?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>시험 4~5주 전부터 동화고, 다산고, 도농고, 와부고, 인창고 등 각 학교별 출제 경향과 부교재, 학습지 기반의 전용 기출 변형 교재로 전환됩니다. 객관식 고난도 킬러는 물론 부분 점수가 깎이기 쉬운 서술형 답안 첨삭까지 원장이 직접 1:1로 지도합니다.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>'자물쇠반(Lock & Study)'은 어떻게 운영되나요?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>방학 및 시험 대비 기간 동안 진행되는 순수 공부 시간 확보 집중 프로그램입니다. 입실 즉시 핸드폰을 보관함에 수거하고, 매 시간별 계획표에 따라 순공 시간을 엄격히 관리하며 현장 질의응답 조교 및 원장 클리닉이 병행됩니다.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>2028 대입 개편안(고교학점제, 내신 5등급제)에 대한 대비도 가능한가요?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>이강석 원장은 다산 지역 학부모 입시 설명회를 정기적으로 주관하는 입시 전문가입니다. 중3 학생의 고교 선택 가이드부터 바뀐 통합형 수능 및 내신 체제에 최적화된 학습 로드맵을 1:1로 설계해 드립니다.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Consultation & Level Test Reservation Section -->
+  <section class="section consultation-section" id="consultation">
+    <div class="container consultation-grid">
+      <div class="consultation-info">
+        <span class="section-sub">CONSULTATION & LEVEL TEST</span>
+        <h2 class="consultation-title">수학 1등급을 향한 첫걸음,<br><span class="highlight">1:1 심층 상담 & 레벨테스트</span></h2>
+        <p class="consultation-desc">
+          우리 아이의 현재 수학 학습 상태를 진단하고 가장 현실적이며 확실한 성적 향상 로드맵을 설계해 드립니다.
+        </p>
+
+        <div class="c-perks">
+          <div class="c-perk-item">
+            <span class="c-check">✓</span>
+            <div>
+              <strong>취약 단원 정밀 진단 테스트 무료 제공</strong>
+              <p>계산 실수, 개념 누락, 추론 발상 부족 여부 즉시 파악</p>
+            </div>
+          </div>
+          <div class="c-perk-item">
+            <span class="c-check">✓</span>
+            <div>
+              <strong>학교별 내신 목표 등급 맞춤 전략서 제공</strong>
+              <p>동화고, 다산고, 도농고 등 최근 기출 패턴 기반 가이드</p>
+            </div>
+          </div>
+          <div class="c-perk-item">
+            <span class="c-check">✓</span>
+            <div>
+              <strong>이강석 원장 직접 1:1 심층 상담</strong>
+              <p>원장이 직접 학생 및 학부모님과 대면하여 솔루션 제시</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="direct-contact-card">
+          <div class="dc-item">
+            <span class="dc-label">전화 상담 문의</span>
+            <a href="tel:031-000-0000" class="dc-val">010-XXXX-XXXX / 학원 데스크 문의</a>
+          </div>
+          <div class="dc-item">
+            <span class="dc-label">카카오톡 실시간 문의</span>
+            <a href="https://blog.naver.com/iji99" target="_blank" rel="noopener" class="dc-val highlight-val">블로그 비밀댓글 및 DM 상담 가능</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="consultation-form-wrapper">
+        <form class="consultation-form" id="consultation-form">
+          <h3 class="form-title">무료 진단 & 상담 예약 신청</h3>
+          <p class="form-subtitle">양식을 작성해 주시면 확인 후 신속히 연락드립니다.</p>
+
+          <div class="form-group">
+            <label for="student-name">학생 이름 <span class="required">*</span></label>
+            <input type="text" id="student-name" placeholder="예: 홍길동" required>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="school-name">재학 / 예정 학교 <span class="required">*</span></label>
+              <select id="school-name" required>
+                <option value="">학교 선택</option>
+                <option value="동화고">동화고등학교</option>
+                <option value="다산고">다산고등학교</option>
+                <option value="도농고">도농고등학교</option>
+                <option value="와부고">와부고등학교</option>
+                <option value="인창고">인창고등학교</option>
+                <option value="가운고">가운고등학교</option>
+                <option value="평내고">평내고등학교</option>
+                <option value="중학교">중학교 (예비고1)</option>
+                <option value="기타">기타 학교</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="grade-level">학년 <span class="required">*</span></label>
+              <select id="grade-level" required>
+                <option value="">학년 선택</option>
+                <option value="예비고1(중3)">예비고1 (중3)</option>
+                <option value="고1">고등학교 1학년</option>
+                <option value="고2">고등학교 2학년</option>
+                <option value="고3/N수">고등학교 3학년 / N수</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="phone-number">학부모 연락처 <span class="required">*</span></label>
+            <input type="tel" id="phone-number" placeholder="예: 010-1234-5678" required>
+          </div>
+
+          <div class="form-group">
+            <label for="consult-type">희망 상담 내용</label>
+            <select id="consult-type">
+              <option value="내신 1등급 대비반">내신 1등급 대비반 상담</option>
+              <option value="입학 레벨테스트 신청">입학 레벨테스트 무료 신청</option>
+              <option value="자물쇠반 (Lock & Study) 문의">자물쇠반 (Lock & Study) 문의</option>
+              <option value="예비고1 고교선택 및 선행 전략">예비고1 고교선택 및 선행 전략</option>
+              <option value="수능/모의고사 심화 클리닉">수능/모의고사 심화 클리닉</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="notes">현재 수학 성적 및 고민 사항</label>
+            <textarea id="notes" rows="3" placeholder="예: 현재 3등급대인데 킬러 문항에서 시간이 부족합니다. 방학 동안 기본 개념을 다시 잡고 싶습니다."></textarea>
+          </div>
+
+          <div class="form-privacy">
+            <input type="checkbox" id="privacy-check" required checked>
+            <label for="privacy-check">상담 진행을 위한 개인정보 수집 및 이용에 동의합니다.</label>
+          </div>
+
+          <button type="submit" class="btn btn-primary submit-btn">
+            <span>상담 및 테스트 예약 완료</span>
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Location & Campus Info Section -->
+  <section class="section location-section" id="location">
+    <div class="container">
+      <div class="section-head text-center">
+        <span class="section-sub">LOCATION</span>
+        <h2 class="section-title">학원 오시는 길</h2>
+        <p class="section-desc">
+          남양주 다산신도시 학원가에 위치하여 안전하고 쾌적한 학습 환경을 제공합니다.
+        </p>
+      </div>
+
+      <div class="location-card">
+        <div class="loc-map-visual">
+          <div class="map-placeholder">
+            <div class="pin-marker">
+              <div class="pin-pulse"></div>
+              <div class="pin-point">📍</div>
+            </div>
+            <div class="map-label">
+              <strong>다산미래학원 (강석수학)</strong>
+              <span>경기도 남양주시 다산동 중심상가</span>
+            </div>
+            <a href="https://map.naver.com" target="_blank" rel="noopener" class="btn btn-secondary map-open-btn">
+              네이버 지도에서 보기 →
+            </a>
+          </div>
+        </div>
+
+        <div class="loc-info-details">
+          <div class="loc-item">
+            <span class="loc-icon">🏢</span>
+            <div>
+              <strong>학원 위치</strong>
+              <p>경기도 남양주시 다산동 (다산미래학원 고등부 수학관)</p>
+            </div>
+          </div>
+          <div class="loc-item">
+            <span class="loc-icon">⏰</span>
+            <div>
+              <strong>상담 및 수업 운영 시간</strong>
+              <p>평일: 14:00 ~ 22:00 | 주말: 10:00 ~ 22:00 (사전 예약 필수)</p>
+            </div>
+          </div>
+          <div class="loc-item">
+            <span class="loc-icon">📱</span>
+            <div>
+              <strong>온라인 채널</strong>
+              <p>
+                네이버 블로그: <a href="https://blog.naver.com/iji99" target="_blank">blog.naver.com/iji99</a><br>
+                유튜브: <a href="https://www.youtube.com/@강석수학" target="_blank">@강석수학</a><br>
+                인스타그램: <a href="https://instagram.com/xboml21" target="_blank">@xboml21</a>
+              </p>
+            </div>
+          </div>
+          <div class="loc-btn-group">
+            <a href="#consultation" class="btn btn-primary w-full">상담 예약하고 방문하기</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-content">
+      <div class="footer-brand">
+        <div class="footer-logo-row">
+          <img src="./assets/logo.png" alt="강석수학 로고" class="footer-logo">
+          <span class="footer-title">강석수학 · KANG MATH</span>
+        </div>
+        <p class="footer-slogan">
+          "수학은 언어이자 논리입니다."<br>
+          다산·구리·남양주 고등 수학의 최정상, 20년 경력의 이강석T가 함께합니다.
+        </p>
+        <div class="footer-socials">
+          <a href="https://blog.naver.com/iji99" target="_blank" rel="noopener" class="social-btn" title="네이버 블로그">N</a>
+          <a href="https://www.youtube.com/@강석수학" target="_blank" rel="noopener" class="social-btn yt" title="유튜브">YT</a>
+          <a href="https://instagram.com/xboml21" target="_blank" rel="noopener" class="social-btn ig" title="인스타그램">IG</a>
+        </div>
+      </div>
+
+      <div class="footer-links-group">
+        <div class="footer-col">
+          <h4>바로가기</h4>
+          <a href="#about">강사 소개</a>
+          <a href="#schools">학교별 내신전략</a>
+          <a href="#system">4단계 학습시스템</a>
+          <a href="#curriculum">학년별 커리큘럼</a>
+          <a href="#media">유튜브 & 블로그</a>
+        </div>
+        <div class="footer-col">
+          <h4>공식 도메인</h4>
+          <p class="domain-badge">kangmath.com</p>
+          <p class="domain-badge">강석수학.com</p>
+          <p class="blog-ref">blog.naver.com/iji99</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container fb-container">
+        <p>© 2026 강석수학 (KANG MATH). All rights reserved.</p>
+        <p>본 사이트는 다산미래학원 고등부 이강석T 공식 홈페이지입니다.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating Fast Action Bar -->
+  <div class="floating-bar" id="floating-bar">
+    <a href="#consultation" class="floating-btn consult">
+      <span class="f-icon">📝</span>
+      <span class="f-text">1:1 상담신청</span>
+    </a>
+    <a href="https://blog.naver.com/iji99" target="_blank" rel="noopener" class="floating-btn blog">
+      <span class="f-icon">N</span>
+      <span class="f-text">네이버 블로그</span>
+    </a>
+    <a href="https://www.youtube.com/@강석수학" target="_blank" rel="noopener" class="floating-btn youtube">
+      <span class="f-icon">▶</span>
+      <span class="f-text">유튜브 직강</span>
+    </a>
+    <button class="floating-btn top-scroll" id="scroll-top-btn" title="맨 위로">
+      <span class="f-icon">▲</span>
+    </button>
+  </div>
+
+  <!-- Success Modal for Consultation Form -->
+  <div class="modal-backdrop" id="success-modal">
+    <div class="modal-card">
+      <div class="modal-icon">🎉</div>
+      <h3 class="modal-title">상담 신청이 접수되었습니다!</h3>
+      <p class="modal-desc" id="modal-desc">
+        작성해 주신 내용을 바탕으로 이강석 원장 연구실에서 24시간 이내에 확인 후 연락드리겠습니다.
+      </p>
+      <div class="modal-actions">
+        <button class="btn btn-primary" id="modal-close-btn">확인</button>
+        <a href="https://blog.naver.com/iji99" target="_blank" class="btn btn-secondary">블로그 글 더보기</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main JavaScript File -->
+  <script src="main.js"></script>
+</body>
+</html>
