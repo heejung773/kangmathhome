@@ -512,7 +512,7 @@ ul {
 
 /* Hero Section - Ambient Studio Lighting & Rich Visual Density */
 .hero-section {
-  padding: 20px 0 35px;
+  padding: 60px 0 35px;
   position: relative;
   background: 
     radial-gradient(ellipse 650px 420px at 15% 15%, rgba(37, 99, 235, 0.22), transparent 70%),
