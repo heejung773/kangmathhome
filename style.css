@@ -514,12 +514,7 @@ ul {
 .hero-section {
   padding: 84px 0 35px;
   position: relative;
-  background: 
-    radial-gradient(ellipse 650px 420px at 15% 15%, rgba(37, 99, 235, 0.22), transparent 70%),
-    radial-gradient(ellipse 550px 450px at 85% 25%, rgba(245, 158, 11, 0.16), transparent 70%),
-    radial-gradient(circle 600px at 75% 20%, rgba(99, 102, 241, 0.2), transparent 65%),
-    radial-gradient(circle 800px at 50% 0%, rgba(30, 58, 138, 0.25), transparent 70%),
-    linear-gradient(180deg, rgba(6, 11, 24, 0.96) 0%, rgba(8, 14, 30, 0.98) 100%);
+  background: var(--bg-dark);
   overflow: hidden;
 }
 
@@ -533,8 +528,6 @@ ul {
     linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
   background-size: 36px 36px;
   background-position: center top;
-  mask-image: radial-gradient(ellipse 85% 75% at 50% 30%, #000 35%, transparent 85%);
-  -webkit-mask-image: radial-gradient(ellipse 85% 75% at 50% 30%, #000 35%, transparent 85%);
   pointer-events: none;
   z-index: 1;
 }
@@ -698,9 +691,9 @@ ul {
   width: 285px;
   height: 285px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(37, 99, 235, 0.38) 0%, rgba(245, 158, 11, 0.22) 55%, transparent 75%);
-  border: 1.5px solid rgba(255, 255, 255, 0.18);
-  box-shadow: 0 0 50px rgba(37, 99, 235, 0.4), inset 0 0 30px rgba(245, 158, 11, 0.25);
+  background: transparent;
+  border: none;
+  box-shadow: none;
   z-index: -1;
   pointer-events: none;
 }
@@ -710,7 +703,7 @@ ul {
   width: auto;
   max-width: 100%;
   object-fit: contain;
-  filter: drop-shadow(0 15px 35px rgba(0, 0, 0, 0.8)) drop-shadow(0 0 35px rgba(59, 130, 246, 0.45));
+  filter: none;
   transition: var(--transition-smooth);
   position: relative;
   z-index: 2;
@@ -724,8 +717,7 @@ ul {
   width: 300px;
   height: 300px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(37, 99, 235, 0.5) 0%, rgba(245, 158, 11, 0.25) 50%, transparent 70%);
-  filter: blur(28px);
+  display: none;
   z-index: -2;
   pointer-events: none;
 }
