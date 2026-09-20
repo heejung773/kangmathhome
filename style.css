@@ -535,7 +535,7 @@ ul {
 
 /* Hero Section - Ambient Studio Lighting & Rich Visual Density */
 .hero-section {
-  padding: 46px 0 80px;
+  padding: 46px 0 50px;
   position: relative;
   background: 
     radial-gradient(ellipse 650px 420px at 15% 15%, rgba(37, 99, 235, 0.22), transparent 70%),
@@ -713,8 +713,8 @@ ul {
   top: 15px;
   left: 50%;
   transform: translateX(-50%);
-  width: 320px;
-  height: 320px;
+  width: 285px;
+  height: 285px;
   border-radius: 50%;
   background: radial-gradient(circle, rgba(37, 99, 235, 0.38) 0%, rgba(245, 158, 11, 0.22) 55%, transparent 75%);
   border: 1.5px solid rgba(255, 255, 255, 0.18);
@@ -724,7 +724,7 @@ ul {
 }
 
 .hero-instructor-img {
-  max-height: 390px;
+  max-height: 330px;
   width: auto;
   max-width: 100%;
   object-fit: contain;
@@ -1108,12 +1108,12 @@ ul {
 
 /* Sections Global */
 .section {
-  padding: 100px 0;
+  padding: 65px 0;
   position: relative;
 }
 
 .section-head {
-  margin-bottom: 60px;
+  margin-bottom: 40px;
 }
 
 .text-center {
