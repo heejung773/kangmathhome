@@ -2919,6 +2919,16 @@ button[class*="btn"],
   border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
+/* Navigation accents stay crisp without outer glow. */
+.nav-menu .nav-link,
+.nav-menu .nav-link:hover,
+.nav-menu .nav-badge-hot,
+.nav-menu .nav-badge-live,
+.nav-menu .nav-cta-btn,
+.nav-menu .nav-cta-btn:hover {
+  box-shadow: none !important;
+}
+
 .btn-naver-blog:hover {
   transform: translateY(-3px) scale(1.02);
   background: linear-gradient(135deg, #00e066 0%, #03c75a 100%);
