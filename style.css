@@ -1060,6 +1060,29 @@ ul {
 }
 
 @media (max-width: 480px) {
+  .hero-metrics {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+  .metric-item {
+    flex-direction: row;
+    align-items: center;
+    gap: 16px;
+  }
+  .metric-number {
+    min-width: 92px;
+    font-size: 1.7rem;
+    white-space: nowrap;
+  }
+  .metric-divider {
+    width: 100%;
+    height: 1px;
+  }
+  .metric-label {
+    margin-top: 0;
+  }
   .school-recommend-top {
     flex-wrap: wrap;
   }
