@@ -958,9 +958,9 @@ ul {
   gap: 8px;
   flex: 1;
   min-width: 0;
-  color: #d9edf6;
-  font-size: 0.72rem;
-  font-weight: 600;
+  color: #f0fbff;
+  font-size: 1.05rem;
+  font-weight: 800;
   line-height: 1.35;
 }
 
@@ -1033,9 +1033,13 @@ ul {
 .school-recommend-secondary {
   width: 100%;
   justify-content: center !important;
-  padding: 14px 18px !important;
-  border: 1px solid rgba(125, 211, 252, 0.55);
-  color: #d5f1ff;
+  min-height: 58px !important;
+  padding: 16px 22px !important;
+  border: 1px solid #22d3ee;
+  border-radius: 8px !important;
+  background: #0891b2;
+  color: #ffffff;
+  font-size: 1.25rem !important;
 }
 
 .school-recommend-actions a:hover,
