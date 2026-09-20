@@ -930,10 +930,10 @@ ul {
 .school-recommend-visual {
   display: flex;
   align-items: center;
-  gap: 20px;
-  min-height: 148px;
-  margin: 22px 0 24px;
-  padding: 12px 18px;
+  gap: 14px;
+  min-height: 82px;
+  margin: 14px 0 18px;
+  padding: 8px 14px;
   border: 1px solid rgba(125, 211, 252, 0.25);
   background: linear-gradient(100deg, rgba(19, 94, 112, 0.45), rgba(10, 20, 34, 0.35));
   overflow: hidden;
@@ -942,7 +942,7 @@ ul {
 .school-recommend-grade {
   flex-shrink: 0;
   color: #fff;
-  font-size: 5rem;
+  font-size: 2.7rem;
   line-height: 1;
   font-weight: 900;
   white-space: nowrap;
@@ -955,11 +955,11 @@ ul {
 .school-recommend-route {
   display: flex;
   flex-direction: column;
-  gap: 13px;
+  gap: 8px;
   flex: 1;
   min-width: 0;
   color: #d9edf6;
-  font-size: 0.8rem;
+  font-size: 0.72rem;
   font-weight: 600;
   line-height: 1.35;
 }
