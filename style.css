@@ -231,9 +231,37 @@ ul {
   letter-spacing: 0.2px;
 }
 
-.hero-consult-sub {
-  padding: 16px 26px;
-  font-size: 0.98rem;
+.hero-buttons .btn-youtube-glow {
+  padding: 14px 20px;
+  gap: 12px;
+  background: #ffffff;
+  border-color: #ffffff;
+  color: #151b28;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.3);
+  animation: none;
+}
+
+.hero-buttons .btn-youtube-glow:hover {
+  background: #f1f5f9;
+  color: #151b28;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+}
+
+.hero-buttons .yt-play-icon-box {
+  width: 54px;
+  height: 42px;
+  border-radius: 12px;
+  background: #e21b1b;
+  color: #ffffff;
+}
+
+.hero-buttons .yt-icon-svg {
+  width: 29px;
+  height: 29px;
+}
+
+.hero-buttons .btn-highlight-sub {
+  color: #4b5563;
 }
 
 /* Top Announcement Bar */
@@ -480,6 +508,10 @@ ul {
   color: #000000;
   transform: translateY(-2px);
   box-shadow: 0 6px 26px rgba(245, 158, 11, 0.75);
+}
+
+.mobile-only {
+  display: none;
 }
 
 /* Mobile Toggle */
@@ -2340,62 +2372,6 @@ ul {
   gap: 12px;
 }
 
-/* Floating Actions Bar */
-.floating-bar {
-  position: fixed;
-  right: 24px;
-  bottom: 30px;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  z-index: 99;
-}
-
-.floating-btn {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  padding: 10px 16px;
-  border-radius: var(--radius-full);
-  font-size: 0.88rem;
-  font-weight: 700;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
-  backdrop-filter: blur(8px);
-  transition: var(--transition-smooth);
-}
-
-.floating-btn:hover {
-  transform: translateY(-3px) scale(1.03);
-}
-
-.floating-btn.consult {
-  background: #2563eb;
-  color: #ffffff;
-  border: 1px solid #3b82f6;
-}
-
-.floating-btn.blog {
-  background: #03c75a;
-  color: #ffffff;
-}
-
-.floating-btn.youtube {
-  background: #ef4444;
-  color: #ffffff;
-}
-
-.floating-btn.top-scroll {
-  width: 42px;
-  height: 42px;
-  padding: 0;
-  justify-content: center;
-  background: rgba(15, 23, 42, 0.85);
-  color: #ffffff;
-  border: 1px solid var(--border-subtle);
-  cursor: pointer;
-  align-self: flex-end;
-}
-
 /* Modal */
 .modal-backdrop {
   position: fixed;
@@ -2557,15 +2533,6 @@ ul {
   }
   .footer-content {
     grid-template-columns: 1fr;
-  }
-  .floating-bar .f-text {
-    display: none;
-  }
-  .floating-btn {
-    width: 44px;
-    height: 44px;
-    padding: 0;
-    justify-content: center;
   }
 }
 

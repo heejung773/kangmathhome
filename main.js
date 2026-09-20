@@ -75,11 +75,9 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // ==========================================
-  // 2. Sticky Header & Top Scroll Button
+  // 2. Sticky Header
   // ==========================================
   const header = document.getElementById('header');
-  const scrollTopBtn = document.getElementById('scroll-top-btn');
-
   window.addEventListener('scroll', () => {
     if (window.scrollY > 40) {
       header.classList.add('scrolled');
@@ -87,21 +85,7 @@ document.addEventListener('DOMContentLoaded', () => {
       header.classList.remove('scrolled');
     }
 
-    if (scrollTopBtn) {
-      if (window.scrollY > 400) {
-        scrollTopBtn.style.opacity = '1';
-        scrollTopBtn.style.pointerEvents = 'auto';
-      } else {
-        scrollTopBtn.style.opacity = '0.4';
-      }
-    }
   });
-
-  if (scrollTopBtn) {
-    scrollTopBtn.addEventListener('click', () => {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
-  }
 
   // ==========================================
   // 3. Mobile Navigation Menu Toggle
