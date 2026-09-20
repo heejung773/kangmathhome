@@ -698,14 +698,8 @@ ul {
   object-fit: contain;
   filter: drop-shadow(0 15px 35px rgba(0, 0, 0, 0.8)) drop-shadow(0 0 35px rgba(59, 130, 246, 0.45));
   transition: var(--transition-smooth);
-  animation: floatSubtle 4s ease-in-out infinite;
   position: relative;
   z-index: 2;
-}
-
-@keyframes floatSubtle {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-8px); }
 }
 
 .instructor-image-glow-bg {
@@ -720,76 +714,6 @@ ul {
   filter: blur(28px);
   z-index: -2;
   pointer-events: none;
-}
-
-/* Floating Trust Badges surrounding the instructor */
-.hero-floating-badge-top {
-  position: absolute;
-  top: 10px;
-  left: -25px;
-  background: rgba(10, 16, 33, 0.94);
-  border: 1px solid rgba(245, 158, 11, 0.6);
-  backdrop-filter: blur(14px);
-  padding: 8px 14px;
-  border-radius: var(--radius-md);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.7), 0 0 20px rgba(245, 158, 11, 0.3);
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  z-index: 3;
-  animation: floatBadgeTop 4.5s ease-in-out infinite;
-}
-
-@keyframes floatBadgeTop {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-6px); }
-}
-
-.hero-floating-badge {
-  position: absolute;
-  bottom: 25px;
-  right: -20px;
-  background: rgba(10, 16, 33, 0.94);
-  border: 1px solid rgba(59, 130, 246, 0.6);
-  backdrop-filter: blur(14px);
-  padding: 10px 16px;
-  border-radius: var(--radius-md);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.7), 0 0 20px rgba(59, 130, 246, 0.35);
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  z-index: 3;
-  animation: floatBadgeBottom 4s ease-in-out infinite;
-}
-
-@keyframes floatBadgeBottom {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(6px); }
-}
-  -webkit-backdrop-filter: blur(12px);
-  padding: 10px 18px;
-  border-radius: var(--radius-full);
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6), 0 0 20px rgba(59, 130, 246, 0.3);
-  z-index: 3;
-}
-
-.hero-floating-badge .badge-icon {
-  font-size: 1.4rem;
-}
-
-.badge-text-group strong {
-  display: block;
-  font-size: 0.92rem;
-  color: #fbbf24;
-  line-height: 1.2;
-}
-
-.badge-text-group span {
-  font-size: 0.78rem;
-  color: #cbd5e1;
 }
 
 /* Glass Hero Card */
@@ -985,31 +909,64 @@ ul {
 .school-recommend-visual {
   display: flex;
   align-items: center;
-  margin: 30px 0 25px;
+  gap: 20px;
+  min-height: 148px;
+  margin: 22px 0 24px;
+  padding: 12px 18px;
+  border: 1px solid rgba(125, 211, 252, 0.25);
+  background: linear-gradient(100deg, rgba(19, 94, 112, 0.45), rgba(10, 20, 34, 0.35));
+  overflow: hidden;
 }
 
-.school-recommend-node {
+.school-recommend-grade {
   flex-shrink: 0;
-  padding: 7px 10px;
-  border: 1px solid rgba(125, 211, 252, 0.45);
-  border-radius: 4px;
-  color: #c9eafa;
-  font-size: 0.78rem;
-  font-weight: 700;
+  color: #fff;
+  font-size: 5rem;
+  line-height: 1;
+  font-weight: 900;
   white-space: nowrap;
 }
 
-.school-recommend-ai {
-  border-color: #fbbf24;
-  background: #f59e0b;
-  color: #171a20;
+.school-recommend-grade span {
+  color: #fbbf24;
 }
 
-.school-recommend-line {
+.school-recommend-route {
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
   flex: 1;
-  min-width: 8px;
-  height: 1px;
-  background: #7dd3fc;
+  min-width: 0;
+  color: #d9edf6;
+  font-size: 0.8rem;
+  font-weight: 600;
+  line-height: 1.35;
+}
+
+.school-recommend-route strong {
+  color: #fbbf24;
+  font-size: 0.78rem;
+}
+
+.school-recommend-track {
+  display: block;
+  height: 3px;
+  width: 100%;
+  background: rgba(125, 211, 252, 0.25);
+  overflow: hidden;
+}
+
+.school-recommend-track span {
+  display: block;
+  height: 100%;
+  background: #fbbf24;
+  transform-origin: left;
+  animation: recommendProgress 6s ease-in-out infinite alternate;
+}
+
+@keyframes recommendProgress {
+  from { transform: scaleX(0.12); }
+  to { transform: scaleX(1); }
 }
 
 .school-recommend h2 {
@@ -1071,9 +1028,26 @@ ul {
 }
 
 @media (max-width: 480px) {
+  .school-recommend-top {
+    flex-wrap: wrap;
+  }
+  .school-recommend-visual {
+    gap: 12px;
+    padding: 12px;
+  }
+  .school-recommend-grade {
+    font-size: 3.8rem;
+  }
   .school-recommend-actions {
     flex-direction: column;
     align-items: stretch;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .school-recommend-track span {
+    animation: none;
+    transform: scaleX(1);
   }
 }
 
