@@ -344,7 +344,7 @@ ul {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 112px;
+  height: 100px;
 }
 
 .logo-group {
@@ -354,14 +354,15 @@ ul {
 }
 
 .brand-logo {
-  height: 100px;
+  height: 92px;
   width: auto;
   border-radius: 0;
   background: transparent;
   padding: 0;
   object-fit: contain;
   box-shadow: none;
-  filter: drop-shadow(0 3px 12px rgba(37, 99, 235, 0.45));
+  mix-blend-mode: screen;
+  filter: drop-shadow(0 3px 12px rgba(245, 158, 11, 0.28));
 }
 
 /* Nav Menu Items - Visually Prominent */
@@ -2441,7 +2442,7 @@ ul {
   }
   .nav-menu {
     position: fixed;
-    top: 112px;
+    top: 100px;
     left: 0;
     width: 100%;
     background: rgba(6, 11, 24, 0.98);
@@ -2500,7 +2501,7 @@ ul {
   }
   .nav-menu {
     position: fixed;
-    top: 112px;
+    top: 100px;
     left: 0;
     width: 100%;
     background: rgba(6, 11, 24, 0.98);
