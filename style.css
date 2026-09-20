@@ -512,7 +512,7 @@ ul {
 
 /* Hero Section - Ambient Studio Lighting & Rich Visual Density */
 .hero-section {
-  padding: 60px 0 35px;
+  padding: 84px 0 35px;
   position: relative;
   background: 
     radial-gradient(ellipse 650px 420px at 15% 15%, rgba(37, 99, 235, 0.22), transparent 70%),
@@ -550,7 +550,7 @@ ul {
 
 /* Keep the headline block visually aligned with the top of the instructor visual. */
 .hero-content {
-  transform: translateY(-70px);
+  transform: none;
 }
 
 .hero-badge-group {
