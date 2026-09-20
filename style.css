@@ -1018,7 +1018,7 @@ ul {
   min-height: 47px;
   padding: 9px 13px;
   border-radius: 4px;
-  font-size: 0.84rem;
+  font-size: 1.1rem;
   font-weight: 800;
   text-decoration: none;
   white-space: nowrap;
@@ -1031,6 +1031,9 @@ ul {
 }
 
 .school-recommend-secondary {
+  width: 100%;
+  justify-content: center !important;
+  padding: 14px 18px !important;
   border: 1px solid rgba(125, 211, 252, 0.55);
   color: #d5f1ff;
 }
