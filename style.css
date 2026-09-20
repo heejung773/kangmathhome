@@ -344,7 +344,7 @@ ul {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 100px;
+  height: 72px;
 }
 
 .logo-group {
@@ -355,7 +355,7 @@ ul {
 
 .brand-wordmark {
   color: #ffffff;
-  font-size: 2rem;
+  font-size: 1.8rem;
   font-weight: 900;
   line-height: 1;
   letter-spacing: -1.5px;
@@ -512,7 +512,7 @@ ul {
 
 /* Hero Section - Ambient Studio Lighting & Rich Visual Density */
 .hero-section {
-  padding: 46px 0 50px;
+  padding: 20px 0 35px;
   position: relative;
   background: 
     radial-gradient(ellipse 650px 420px at 15% 15%, rgba(37, 99, 235, 0.22), transparent 70%),
@@ -2439,7 +2439,7 @@ ul {
   }
   .nav-menu {
     position: fixed;
-    top: 100px;
+    top: 72px;
     left: 0;
     width: 100%;
     background: rgba(6, 11, 24, 0.98);
@@ -2498,7 +2498,7 @@ ul {
   }
   .nav-menu {
     position: fixed;
-    top: 100px;
+    top: 72px;
     left: 0;
     width: 100%;
     background: rgba(6, 11, 24, 0.98);
