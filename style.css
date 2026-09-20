@@ -548,6 +548,11 @@ ul {
   z-index: 2;
 }
 
+/* Keep the headline block visually aligned with the top of the instructor visual. */
+.hero-content {
+  transform: translateY(-70px);
+}
+
 .hero-badge-group {
   display: flex;
   align-items: center;
@@ -2466,6 +2471,10 @@ ul {
 }
 
 @media (max-width: 1024px) {
+  .hero-content {
+    transform: none;
+  }
+
   .hero-grid {
     grid-template-columns: 1fr;
   }
