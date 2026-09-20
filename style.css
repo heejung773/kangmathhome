@@ -565,9 +565,9 @@ ul {
   gap: 8px;
   background: rgba(37, 99, 235, 0.15);
   border: 1px solid rgba(59, 130, 246, 0.45);
-  padding: 6px 16px;
+  padding: 10px 20px;
   border-radius: var(--radius-full);
-  font-size: 0.88rem;
+  font-size: 1.05rem;
   font-weight: 700;
   color: #bfdbfe;
   box-shadow: 0 0 15px rgba(37, 99, 235, 0.25);
@@ -596,7 +596,7 @@ ul {
 }
 
 .hero-title {
-  font-size: 3.1rem;
+  font-size: clamp(3.4rem, 5vw, 4.6rem);
   font-weight: 800;
   line-height: 1.25;
   letter-spacing: -1px;
@@ -604,7 +604,7 @@ ul {
 }
 
 .hero-desc {
-  font-size: 1.12rem;
+  font-size: 1.35rem;
   color: var(--text-light);
   line-height: 1.75;
   margin-bottom: 34px;
@@ -2526,7 +2526,7 @@ ul {
     font-size: 1.05rem;
   }
   .hero-title {
-    font-size: 2.2rem;
+    font-size: 2.8rem;
   }
   .system-grid {
     grid-template-columns: 1fr;
