@@ -222,7 +222,7 @@ document.addEventListener('DOMContentLoaded', () => {
       strategy: [
         "<수학은 개념을 사랑해> 기반의 완벽한 증명 백지 훈련",
         "EBS 수능특강·수능완성 고난도 문항 변형 대비",
-        "원장 직접 1:1 손글씨 논리 풀이 지도"
+        "이강석 대표강사 직접 1:1 손글씨 논리 풀이 지도"
       ],
       videoTag: "와부고 킬러 문항 손글씨 해설 영상 제공"
     },
@@ -335,7 +335,7 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         {
           name: "서술형 감점 제로 피드백",
-          detail: "원장이 직접 채점하여 부분점수 누수를 막는 서술형 논리 전개 첨삭"
+          detail: "이강석 대표강사가 직접 채점하여 부분점수 누수를 막는 서술형 논리 전개 첨삭"
         },
         {
           name: "방학 Lock & Study (자물쇠반)",
@@ -373,7 +373,7 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         {
           name: "100분 실전 봉투 모의고사",
-          detail: "매주 실전과 동일한 환경에서 타임어택 시험 진행 및 원장 심층 해설 직강"
+          detail: "매주 실전과 동일한 환경에서 타임어택 시험 진행 및 대표강사 심층 해설 직강"
         },
         {
           name: "주요 대학별 수리논술 특강",
@@ -485,7 +485,7 @@ document.addEventListener('DOMContentLoaded', () => {
       if (modalDesc) {
         modalDesc.innerHTML = `
           <strong>${studentName}</strong> 학생(${schoolName} ${gradeLevel})의 <strong>[${consultType}]</strong> 신청이 정상 접수되었습니다.<br><br>
-          입력하신 학부모 연락처(<strong>${phoneNumber}</strong>)로 이강석 원장 연구실에서 24시간 이내에 직접 확인 전화 또는 안내 문자를 발송해 드립니다.
+          입력하신 학부모 연락처(<strong>${phoneNumber}</strong>)로 이강석 대표강사가 24시간 이내에 직접 확인 전화 또는 안내 문자를 발송해 드립니다.
         `;
       }
 
