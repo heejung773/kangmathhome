@@ -26,35 +26,34 @@ document.addEventListener('DOMContentLoaded', () => {
       particles.push({
         x: Math.random() * width,
         y: Math.random() * height,
-        vx: (Math.random() - 0.5) * 0.4,
-        vy: (Math.random() - 0.5) * 0.4,
-        radius: Math.random() * 2 + 1.2,
-        symbols: ['∫', '∑', 'lim', 'dx', 'π', 'θ', 'f(x)', 'Δ', '√'][Math.floor(Math.random() * 9)]
+        vx: (Math.random() - 0.5) * 0.25,
+        vy: (Math.random() - 0.5) * 0.25,
+        radius: Math.random() * 1.5 + 0.8
       });
     }
 
     function animate() {
       ctx.clearRect(0, 0, width, height);
 
-      // Draw glowing lines between close particles
+      // Draw subtle connecting lines
       for (let i = 0; i < particles.length; i++) {
         for (let j = i + 1; j < particles.length; j++) {
           const dx = particles[i].x - particles[j].x;
           const dy = particles[i].y - particles[j].y;
           const dist = Math.sqrt(dx * dx + dy * dy);
 
-          if (dist < 160) {
+          if (dist < 130) {
             ctx.beginPath();
             ctx.moveTo(particles[i].x, particles[i].y);
             ctx.lineTo(particles[j].x, particles[j].y);
-            ctx.strokeStyle = `rgba(59, 130, 246, ${0.15 * (1 - dist / 160)})`;
-            ctx.lineWidth = 0.8;
+            ctx.strokeStyle = `rgba(96, 165, 250, ${0.1 * (1 - dist / 130)})`;
+            ctx.lineWidth = 0.6;
             ctx.stroke();
           }
         }
       }
 
-      // Draw floating particles and subtle math symbols
+      // Draw glowing micro-stars (NO text symbols)
       particles.forEach(p => {
         p.x += p.vx;
         p.y += p.vy;
@@ -66,12 +65,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
         ctx.beginPath();
         ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
-        ctx.fillStyle = 'rgba(96, 165, 250, 0.4)';
+        ctx.fillStyle = 'rgba(147, 197, 253, 0.25)';
         ctx.fill();
-
-        ctx.font = '11px Outfit, sans-serif';
-        ctx.fillStyle = 'rgba(148, 163, 184, 0.25)';
-        ctx.fillText(p.symbols, p.x + 6, p.y - 6);
       });
 
       requestAnimationFrame(animate);
