@@ -353,16 +353,13 @@ ul {
   text-decoration: none;
 }
 
-.brand-logo {
-  height: 92px;
-  width: auto;
-  border-radius: 0;
-  background: transparent;
-  padding: 0;
-  object-fit: contain;
-  box-shadow: none;
-  mix-blend-mode: screen;
-  filter: drop-shadow(0 3px 12px rgba(245, 158, 11, 0.28));
+.brand-wordmark {
+  color: #ffffff;
+  font-size: 2rem;
+  font-weight: 900;
+  line-height: 1;
+  letter-spacing: -1.5px;
+  white-space: nowrap;
 }
 
 /* Nav Menu Items - Visually Prominent */
