@@ -905,9 +905,16 @@ ul {
 }
 
 .school-recommend-label {
-  color: #7dd3fc;
-  font-size: 0.82rem;
+  display: inline-flex;
+  align-items: center;
+  padding: 7px 12px;
+  border: 1px solid rgba(125, 211, 252, 0.55);
+  border-radius: 6px;
+  background: rgba(14, 116, 144, 0.22);
+  color: #a5e9ff;
+  font-size: 1.05rem;
   font-weight: 800;
+  letter-spacing: -0.4px;
 }
 
 .school-recommend-period {
@@ -985,9 +992,10 @@ ul {
 
 .school-recommend h2 {
   color: #fff;
-  font-size: clamp(1.9rem, 3vw, 2.8rem);
+  font-size: clamp(1.65rem, 2.5vw, 2.35rem);
   line-height: 1.2;
   font-weight: 800;
+  white-space: nowrap;
 }
 
 .school-recommend h2 span {
