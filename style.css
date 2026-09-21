@@ -3306,3 +3306,74 @@ button[class*="btn"],
     flex-direction: column;
   }
 }
+
+/* Apply the cleanup after all component-specific styles. */
+body.clean-effects,
+body.clean-effects * {
+  text-shadow: none !important;
+}
+
+body.clean-effects * {
+  background-image: none !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+body.clean-effects .gradient-text {
+  background: none !important;
+  -webkit-text-fill-color: currentColor;
+  color: #60a5fa;
+}
+
+body.clean-effects .nav-link:hover,
+body.clean-effects .btn:hover,
+body.clean-effects a:hover {
+  transform: none;
+}
+
+/* YouTube section: navy-only surfaces and real embedded players. */
+body.clean-effects .youtube-studio-section {
+  background: #071225 !important;
+  border-top-color: #1e3a5f !important;
+}
+
+body.clean-effects .youtube-studio-section .yt-channel-meta-bar,
+body.clean-effects .youtube-studio-section .yt-cat-card,
+body.clean-effects .youtube-studio-section .yt-video-box {
+  background: #0f1b31 !important;
+  border-color: #263d60 !important;
+}
+
+body.clean-effects .youtube-studio-section .yt-channel-badge-icon,
+body.clean-effects .youtube-studio-section .yt-btn,
+body.clean-effects .youtube-studio-section .btn-youtube-glow,
+body.clean-effects .youtube-studio-section .btn-youtube-mega-glow {
+  background: #1d4ed8 !important;
+  color: #ffffff !important;
+}
+
+body.clean-effects .youtube-studio-section .nav-badge-live,
+body.clean-effects .youtube-studio-section .yt-cat-badge,
+body.clean-effects .youtube-studio-section .yt-video-tag-pill {
+  background: #1e3a5f !important;
+  color: #bfdbfe !important;
+}
+
+body.clean-effects .yt-video-thumb-wrap {
+  background: #020817 !important;
+}
+
+body.clean-effects .yt-video-thumb-wrap iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 220px;
+  border: 0;
+}
+
+body.clean-effects .youtube-studio-section .yt-video-box:hover,
+body.clean-effects .youtube-studio-section .yt-cat-card:hover {
+  border-color: #3b82f6 !important;
+  background: #132442 !important;
+}
