@@ -21,7 +21,7 @@ form button:hover { background: #72baff; }
 .link-card:hover { transform: translateY(-5px); border-color: rgba(255,255,255,.85); box-shadow: 0 14px 30px rgba(0,0,0,.28); filter: brightness(1.14); }
 .link-card:active { transform: translateY(-1px) scale(.98); }
 .link-card.clicked::after { opacity: 1; }
-.link-card strong { font-size: 1.3rem; }
+.link-card strong { color: #111; font-size: 1.55rem; font-weight: 900; letter-spacing: -.04em; }
 .link-card .domain { color: #f1f8ff; font-size: 1.08rem; font-weight: 700; letter-spacing: -.01em; }
 .link-label { align-self: flex-start; padding: 5px 9px; border-radius: 999px; background: rgba(255,255,255,.16); font-size: .72rem; font-weight: 800; letter-spacing: .08em; }
 .test { background: linear-gradient(145deg, #237fc4, #16568b); } .fix { background: linear-gradient(145deg, #b47720, #79500f); }
