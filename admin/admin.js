@@ -37,4 +37,14 @@
     showLogin();
     form.username.focus();
   });
+
+  document.querySelectorAll('.link-card').forEach((card) => {
+    card.addEventListener('click', (event) => {
+      const rect = card.getBoundingClientRect();
+      card.style.setProperty('--click-x', `${event.clientX - rect.left}px`);
+      card.style.setProperty('--click-y', `${event.clientY - rect.top}px`);
+      card.classList.add('clicked');
+      window.setTimeout(() => card.classList.remove('clicked'), 350);
+    });
+  });
 })();
