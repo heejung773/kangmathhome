@@ -16,14 +16,14 @@ form button:hover { background: #72baff; }
 .dashboard-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 20px; }
 .logout { padding: 10px 14px; background: rgba(255,255,255,.08); color: #d4e5f8; }
 .link-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
-.link-card { position: relative; display: flex; min-height: 160px; flex-direction: column; justify-content: flex-end; gap: 9px; padding: 22px; border: 1px solid rgba(255,255,255,.28); border-radius: 18px; color: #fff; text-decoration: none; overflow: hidden; transition: transform .18s ease, border-color .18s ease, box-shadow .18s ease, filter .18s ease; }
+.link-card { position: relative; display: flex; min-height: 160px; flex-direction: column; justify-content: flex-end; gap: 9px; padding: 22px; border: 1px solid rgba(255,255,255,.55); border-radius: 18px; color: #08233d; text-decoration: none; overflow: hidden; transition: transform .18s ease, border-color .18s ease, box-shadow .18s ease, filter .18s ease; }
 .link-card::after { content: ''; position: absolute; inset: 0; background: radial-gradient(circle at var(--click-x, 50%) var(--click-y, 50%), rgba(255,255,255,.45), transparent 18%); opacity: 0; transition: opacity .35s ease; pointer-events: none; }
 .link-card:hover { transform: translateY(-5px); border-color: rgba(255,255,255,.85); box-shadow: 0 14px 30px rgba(0,0,0,.28); filter: brightness(1.14); }
 .link-card:active { transform: translateY(-1px) scale(.98); }
 .link-card.clicked::after { opacity: 1; }
-.link-card strong { font-size: 1.3rem; }
-.link-card .domain { color: #f1f8ff; font-size: 1.08rem; font-weight: 700; letter-spacing: -.01em; }
-.link-label { align-self: flex-start; padding: 5px 9px; border-radius: 999px; background: rgba(255,255,255,.16); font-size: .72rem; font-weight: 800; letter-spacing: .08em; }
+.link-card strong { color: #061c32; font-size: 1.3rem; }
+.link-card .domain { color: #143b5d; font-size: 1.08rem; font-weight: 800; letter-spacing: -.01em; }
+.link-label { align-self: flex-start; padding: 5px 9px; border-radius: 999px; background: rgba(3,25,46,.14); color: #08233d; font-size: .72rem; font-weight: 800; letter-spacing: .08em; }
 .test { background: linear-gradient(145deg, #237fc4, #16568b); } .fix { background: linear-gradient(145deg, #b47720, #79500f); }
 .board { background: linear-gradient(145deg, #1c9c91, #14675f); } .wiki { background: linear-gradient(145deg, #8055ba, #54357b); }
 [hidden] { display: none !important; }
