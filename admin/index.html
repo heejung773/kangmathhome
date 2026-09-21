@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>강석수학 관리자</title>
+  <link rel="stylesheet" href="./admin.css">
+</head>
+<body>
+  <main class="admin-shell">
+    <section class="card" id="login-card" aria-labelledby="login-title">
+      <div class="eyebrow">KANG MATH</div>
+      <h1 id="login-title">관리자 바로가기</h1>
+      <p class="intro">선생님 전용 페이지입니다.</p>
+      <form id="login-form" novalidate>
+        <label for="username">아이디</label>
+        <input id="username" name="username" autocomplete="username" required>
+        <label for="password">비밀번호</label>
+        <input id="password" name="password" type="password" autocomplete="current-password" required>
+        <button type="submit">로그인</button>
+        <p class="message" id="login-message" role="alert" aria-live="polite"></p>
+      </form>
+    </section>
+
+    <section class="card dashboard" id="dashboard" hidden aria-labelledby="dashboard-title">
+      <div class="dashboard-top">
+        <div>
+          <div class="eyebrow">TEACHER ACCESS</div>
+          <h1 id="dashboard-title">관리자 메뉴</h1>
+          <p class="intro">필요한 관리 페이지를 선택하세요.</p>
+        </div>
+        <button class="logout" id="logout" type="button">로그아웃</button>
+      </div>
+      <div class="link-grid">
+        <a class="link-card test" href="https://test.kangmath.com/" target="_blank" rel="noopener">
+          <span class="link-label">TEST</span><strong>테스트 사이트</strong><span>test.kangmath.com ↗</span>
+        </a>
+        <a class="link-card fix" href="https://fix.kangmath.com/" target="_blank" rel="noopener">
+          <span class="link-label">FIX</span><strong>수정 작업 사이트</strong><span>fix.kangmath.com ↗</span>
+        </a>
+        <a class="link-card board" href="https://board.kangmath.com/" target="_blank" rel="noopener">
+          <span class="link-label">BOARD</span><strong>게시판</strong><span>board.kangmath.com ↗</span>
+        </a>
+        <a class="link-card wiki" href="https://wiki.kangmath.com/" target="_blank" rel="noopener">
+          <span class="link-label">WIKI</span><strong>위키</strong><span>wiki.kangmath.com ↗</span>
+        </a>
+      </div>
+    </section>
+  </main>
+  <script src="./admin.js"></script>
+</body>
+</html>
