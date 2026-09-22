@@ -1,4 +1,4 @@
-const ALLOWED_ORIGIN = 'https://www.kangmath.com';
+const ALLOWED_ORIGINS = new Set(['https://kangmath.com', 'https://www.kangmath.com']);
 
 const SCHOOLS = new Set(['동화고', '다산고', '도농고', '와부고', '인창고', '가운고', '평내고', '중학교', '기타']);
 const GRADES = new Set(['예비고1(중3)', '고1', '고2', '고3/N수']);
@@ -22,9 +22,9 @@ module.exports = async function handler(req, res) {
   res.setHeader('Cache-Control', 'no-store');
   res.setHeader('Vary', 'Origin');
   const origin = req.headers.origin;
-  if (origin && origin !== ALLOWED_ORIGIN) return res.status(403).json({ error: '허용되지 않은 요청입니다.' });
+  if (origin && !ALLOWED_ORIGINS.has(origin)) return res.status(403).json({ error: '허용되지 않은 요청입니다.' });
 
-  res.setHeader('Access-Control-Allow-Origin', ALLOWED_ORIGIN);
+  if (origin) res.setHeader('Access-Control-Allow-Origin', origin);
   res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
   if (req.method === 'OPTIONS') return res.status(204).end();
