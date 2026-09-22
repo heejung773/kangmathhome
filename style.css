@@ -2132,8 +2132,62 @@ ul {
 }
 
 .form-privacy input[type="checkbox"] {
-  width: auto;
+  width: 20px;
+  height: 20px;
+  flex: 0 0 20px;
   accent-color: #2563eb;
+}
+
+.form-privacy label {
+  line-height: 1.55;
+  cursor: pointer;
+}
+
+.privacy-details {
+  margin: -10px 0 22px;
+  color: var(--text-muted);
+  font-size: 0.82rem;
+  line-height: 1.65;
+}
+
+.privacy-details summary {
+  width: fit-content;
+  color: #93c5fd;
+  cursor: pointer;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.privacy-details > div {
+  margin-top: 10px;
+  padding: 14px;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.privacy-details p + p {
+  margin-top: 7px;
+}
+
+.privacy-details strong {
+  color: var(--text-light);
+}
+
+.form-status {
+  min-height: 0;
+  color: #fca5a5;
+  font-size: 0.88rem;
+  line-height: 1.5;
+}
+
+.form-status:not(:empty) {
+  margin: -10px 0 16px;
+}
+
+.submit-btn:disabled {
+  cursor: wait;
+  opacity: 0.72;
 }
 
 .submit-btn {
@@ -2609,6 +2663,67 @@ ul {
   .form-row {
     grid-template-columns: 1fr;
   }
+
+  .consultation-section {
+    padding-top: 48px;
+    padding-bottom: 48px;
+    scroll-margin-top: 72px;
+  }
+
+  .consultation-grid {
+    gap: 28px;
+  }
+
+  .consultation-title {
+    font-size: clamp(1.8rem, 7.5vw, 2.2rem);
+  }
+
+  .consultation-form-wrapper {
+    padding: 24px 18px;
+  }
+
+  .consultation-form input,
+  .consultation-form select,
+  .consultation-form textarea {
+    min-height: 48px;
+    padding: 12px 14px;
+    font-size: 16px;
+  }
+
+  .consultation-form textarea {
+    min-height: 100px;
+  }
+
+  .form-group {
+    margin-bottom: 16px;
+  }
+
+  .form-privacy {
+    align-items: flex-start;
+    font-size: 0.84rem;
+    margin-bottom: 20px;
+  }
+
+  .form-privacy input[type="checkbox"] {
+    margin-top: 1px;
+  }
+
+  .submit-btn {
+    min-height: 54px;
+    position: sticky;
+    bottom: 12px;
+    z-index: 2;
+  }
+
+  .header-container > .nav-cta-btn.mobile-only {
+    min-height: 42px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 9px 12px;
+    white-space: nowrap;
+  }
+
   .footer-content {
     grid-template-columns: 1fr;
   }

@@ -423,9 +423,11 @@ document.addEventListener('DOMContentLoaded', () => {
   const successModal = document.getElementById('success-modal');
   const modalCloseBtn = document.getElementById('modal-close-btn');
   const modalDesc = document.getElementById('modal-desc');
+  const submitButton = document.getElementById('consultation-submit');
+  const formStatus = document.getElementById('consultation-status');
 
   if (consultForm && successModal) {
-    consultForm.addEventListener('submit', (e) => {
+    consultForm.addEventListener('submit', async (e) => {
       e.preventDefault();
 
       const studentName = document.getElementById('student-name').value.trim();
@@ -435,42 +437,54 @@ document.addEventListener('DOMContentLoaded', () => {
       const consultType = document.getElementById('consult-type').value;
       const notes = document.getElementById('notes').value.trim();
 
-      // Simple phone format check
-      if (!phoneNumber || phoneNumber.length < 9) {
+      const digitsOnlyPhone = phoneNumber.replace(/\D/g, '');
+      if (!/^01[016789]\d{7,8}$/.test(digitsOnlyPhone)) {
         alert('연락처를 정확히 입력해 주세요.');
         return;
       }
 
-      // Save submission data in localStorage for persistence
-      const consultationRecord = {
-        name: studentName,
-        school: schoolName,
-        grade: gradeLevel,
-        phone: phoneNumber,
-        type: consultType,
-        notes: notes,
-        date: new Date().toLocaleString()
-      };
+      if (!document.getElementById('privacy-check').checked) {
+        alert('개인정보 수집 및 이용에 동의해 주세요.');
+        return;
+      }
+
+      const originalButtonText = submitButton?.innerText;
+      if (submitButton) {
+        submitButton.disabled = true;
+        submitButton.innerText = '접수 중입니다…';
+      }
+      if (formStatus) formStatus.textContent = '';
 
       try {
-        const existing = JSON.parse(localStorage.getItem('kangmath_consultations') || '[]');
-        existing.push(consultationRecord);
-        localStorage.setItem('kangmath_consultations', JSON.stringify(existing));
-      } catch (err) {
-        console.error('Storage error:', err);
-      }
+        const response = await fetch('/api/consultation', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            studentName,
+            schoolName,
+            gradeLevel,
+            phoneNumber,
+            consultType,
+            notes,
+            privacyConsent: document.getElementById('privacy-check').checked
+          })
+        });
+        const result = await response.json().catch(() => ({}));
+        if (!response.ok) throw new Error(result.error || '접수 전송에 실패했습니다. 잠시 후 다시 시도해 주세요.');
 
-      // Update modal text
-      if (modalDesc) {
-        modalDesc.innerHTML = `
-          <strong>${studentName}</strong> 학생(${schoolName} ${gradeLevel})의 <strong>[${consultType}]</strong> 신청이 정상 접수되었습니다.<br><br>
-          입력하신 학부모 연락처(<strong>${phoneNumber}</strong>)로 이강석 대표강사가 24시간 이내에 직접 확인 전화 또는 안내 문자를 발송해 드립니다.
-        `;
+        if (modalDesc) {
+          modalDesc.textContent = `${studentName} 학생(${schoolName} ${gradeLevel})의 [${consultType}] 신청이 접수되었습니다. 입력하신 학부모 연락처로 확인 후 연락드리겠습니다.`;
+        }
+        successModal.classList.add('active');
+        consultForm.reset();
+      } catch (error) {
+        if (formStatus) formStatus.textContent = error.message || '전송에 실패했습니다. 전화 상담을 이용해 주세요.';
+      } finally {
+        if (submitButton) {
+          submitButton.disabled = false;
+          submitButton.innerText = originalButtonText;
+        }
       }
-
-      // Show modal
-      successModal.classList.add('active');
-      consultForm.reset();
     });
 
     if (modalCloseBtn) {

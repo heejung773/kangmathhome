@@ -951,13 +951,13 @@
 
           <div class="form-group">
             <label for="student-name">학생 이름 <span class="required">*</span></label>
-            <input type="text" id="student-name" placeholder="예: 홍길동" required>
+            <input type="text" id="student-name" name="studentName" autocomplete="name" maxlength="40" placeholder="예: 홍길동" required>
           </div>
 
           <div class="form-row">
             <div class="form-group">
               <label for="school-name">재학 / 예정 학교 <span class="required">*</span></label>
-              <select id="school-name" required>
+              <select id="school-name" name="schoolName" required>
                 <option value="">학교 선택</option>
                 <option value="동화고">동화고등학교</option>
                 <option value="다산고">다산고등학교</option>
@@ -972,7 +972,7 @@
             </div>
             <div class="form-group">
               <label for="grade-level">학년 <span class="required">*</span></label>
-              <select id="grade-level" required>
+              <select id="grade-level" name="gradeLevel" required>
                 <option value="">학년 선택</option>
                 <option value="예비고1(중3)">예비고1 (중3)</option>
                 <option value="고1">고등학교 1학년</option>
@@ -984,12 +984,12 @@
 
           <div class="form-group">
             <label for="phone-number">학부모 연락처 <span class="required">*</span></label>
-            <input type="tel" id="phone-number" placeholder="예: 010-1234-5678" required>
+            <input type="tel" id="phone-number" name="phoneNumber" autocomplete="tel" inputmode="tel" maxlength="20" placeholder="예: 010-1234-5678" required>
           </div>
 
           <div class="form-group">
             <label for="consult-type">희망 상담 내용</label>
-            <select id="consult-type">
+            <select id="consult-type" name="consultType">
               <option value="내신 1등급 대비반">내신 1등급 대비반 상담</option>
               <option value="입학 레벨테스트 신청">입학 레벨테스트 무료 신청</option>
               <option value="자물쇠반 (Lock & Study) 문의">자물쇠반 (Lock & Study) 문의</option>
@@ -1000,15 +1000,27 @@
 
           <div class="form-group">
             <label for="notes">현재 수학 성적 및 고민 사항</label>
-            <textarea id="notes" rows="3" placeholder="예: 현재 3등급대인데 킬러 문항에서 시간이 부족합니다. 방학 동안 기본 개념을 다시 잡고 싶습니다."></textarea>
+            <textarea id="notes" name="notes" rows="3" maxlength="1000" placeholder="예: 현재 3등급대인데 킬러 문항에서 시간이 부족합니다. 방학 동안 기본 개념을 다시 잡고 싶습니다."></textarea>
           </div>
 
           <div class="form-privacy">
-            <input type="checkbox" id="privacy-check" required checked>
-            <label for="privacy-check">상담 진행을 위한 개인정보 수집 및 이용에 동의합니다.</label>
+            <input type="checkbox" id="privacy-check" name="privacyConsent" value="yes" required>
+            <label for="privacy-check">상담 접수와 연락을 위한 개인정보 수집·이용에 동의합니다. (필수)</label>
           </div>
 
-          <button type="submit" class="btn btn-primary submit-btn">
+          <details class="privacy-details">
+            <summary>개인정보 수집·이용 안내</summary>
+            <div>
+              <p><strong>수집 항목</strong> 학생 이름, 학교, 학년, 학부모 연락처, 희망 상담 내용, 상담 메모</p>
+              <p><strong>이용 목적</strong> 상담 신청 확인, 상담 일정 조율 및 문의 응대</p>
+              <p><strong>보유 기간</strong> 접수일로부터 1년 보관 후 파기합니다. 관련 법령에 보존 의무가 있으면 해당 기간 보관합니다.</p>
+              <p>동의를 거부할 수 있으나, 필수 항목 동의가 없으면 온라인 상담 신청이 접수되지 않습니다. 접수 정보는 관리 담당자에게 이메일로 전달됩니다.</p>
+            </div>
+          </details>
+
+          <p class="form-status" id="consultation-status" role="status" aria-live="polite"></p>
+
+          <button type="submit" class="btn btn-primary submit-btn" id="consultation-submit">
             <span>상담 및 테스트 예약 완료</span>
           </button>
         </form>
