@@ -73,17 +73,23 @@ button,input,select,textarea{font:inherit;color:inherit;letter-spacing:inherit}
 /* ---------- 헤더 ---------- */
 .header{position:sticky;top:0;z-index:50;background:rgba(10,17,27,.94);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
 .header .wrap{height:var(--header-h);display:flex;align-items:center;gap:4px}
-.brand{display:flex;flex-direction:column;text-decoration:none;line-height:1.05;margin-right:auto;padding-right:10px}
+.brand{display:flex;flex-direction:column;text-decoration:none;line-height:1.05;margin-right:auto;padding-right:10px;white-space:nowrap;flex-shrink:0}
 .brand b{font-size:clamp(25px,8vw,31px);font-weight:900;letter-spacing:-.065em;line-height:1;background:var(--brand-text);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:#BFE0FF;filter:drop-shadow(0 2px 7px rgba(55,145,255,.42));padding-right:2px}
 .brand small{font-size:12px;color:var(--text-3);font-weight:600;letter-spacing:0;margin-top:3px}
 .icon-btn{width:44px;height:44px;display:grid;place-items:center;border:1px solid var(--line);background:var(--panel-2);border-radius:12px;cursor:pointer;color:var(--text);text-decoration:none}
 .icon-btn svg{width:22px;height:22px}
-.yt-chip{display:inline-flex;align-items:center;gap:6px;height:40px;padding:0 11px 0 9px;border-radius:999px;text-decoration:none;border:1px solid rgba(244,63,94,.5);background:rgba(244,63,94,.10);color:#FFE4E8;font-size:14px;font-weight:700;letter-spacing:-.02em;white-space:nowrap;margin-right:6px}
+.yt-chip{display:inline-flex;align-items:center;justify-content:center;gap:6px;height:44px;min-width:44px;padding:0 11px 0 9px;border-radius:999px;text-decoration:none;border:1px solid rgba(244,63,94,.5);background:rgba(244,63,94,.10);color:#FFE4E8;font-size:14px;font-weight:700;letter-spacing:-.02em;white-space:nowrap;margin-right:6px}
 .yt-chip svg{width:22px;height:16px;flex:none}
 .yt-chip:hover{border-color:#F43F5E}
-.blog-chip{display:none;align-items:center;gap:6px;height:40px;padding:0 13px 0 9px;border-radius:999px;text-decoration:none;border:1px solid rgba(3,199,90,.55);background:rgba(3,199,90,.08);color:#DCFCE7;font-size:14px;font-weight:700;letter-spacing:-.02em;white-space:nowrap;margin-right:6px}
+.blog-chip{display:inline-flex;align-items:center;justify-content:center;gap:6px;height:44px;width:44px;padding:0;border-radius:999px;text-decoration:none;border:1px solid rgba(3,199,90,.55);background:rgba(3,199,90,.08);color:#DCFCE7;font-size:14px;font-weight:700;letter-spacing:-.02em;white-space:nowrap;margin-right:6px}
 .blog-chip svg{width:20px;height:20px;flex:none}
 .blog-chip:hover{border-color:#03C75A}
+.yt-chip,.blog-chip{flex-shrink:0}
+.blog-chip{min-width:44px}
+.sr-lbl,.blog-chip .lbl{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+/* 휴대폰 헤더: 410px 이상이면 블로그 글자도 표시, 360px 미만이면 유튜브도 아이콘만 */
+@media (min-width:410px){.blog-chip{width:auto;padding:0 13px 0 9px}.blog-chip .lbl{position:static;width:auto;height:auto;overflow:visible;clip:auto}}
+@media (max-width:359px){.yt-chip{padding:0;width:44px}.yt-chip .lbl{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}.brand{padding-right:6px}}
 .btn-blog{background:rgba(3,199,90,.08);color:#DCFCE7;border:1.5px solid rgba(3,199,90,.55)}
 .btn-blog:hover{border-color:#03C75A}
 .nav-desktop,.header .header-cta{display:none}
@@ -354,7 +360,7 @@ details.acc[open]{border-color:rgba(56,189,248,.45);box-shadow:0 0 0 1px rgba(56
   .bottom-bar{display:none}
   .header .header-cta{display:flex;min-height:46px;font-size:16px;margin-left:0;padding:0 20px}
   .yt-chip{height:44px;font-size:15px;padding:0 14px 0 11px}
-  .blog-chip{height:44px;font-size:15px;padding:0 14px 0 10px}
+  .blog-chip{font-size:15px}
   .sec{padding:88px 0}
   .h2{font-size:34px}
   .hero{padding:72px 0 72px}
@@ -443,11 +449,8 @@ details.acc[open]{border-color:rgba(56,189,248,.45);box-shadow:0 0 0 1px rgba(56
   .ax-quote p{font-size:24px}
   .footer-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:56px;align-items:start}
 }
-@media (min-width:1024px){
-  .blog-chip{display:inline-flex}
-}
 @media (min-width:1024px) and (max-width:1199px){
-  .blog-chip{width:44px;padding:0;justify-content:center}
+  .blog-chip{width:44px;padding:0}
   .blog-chip .lbl{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
   .yt-chip{padding:0 11px 0 9px}
   .nav-desktop a{padding:8px 7px;font-size:14px}
