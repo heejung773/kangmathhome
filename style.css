@@ -81,13 +81,21 @@ button,input,select,textarea{font:inherit;color:inherit;letter-spacing:inherit}
 .yt-chip{display:inline-flex;align-items:center;gap:6px;height:40px;padding:0 11px 0 9px;border-radius:999px;text-decoration:none;border:1px solid rgba(244,63,94,.5);background:rgba(244,63,94,.10);color:#FFE4E8;font-size:14px;font-weight:700;letter-spacing:-.02em;white-space:nowrap;margin-right:6px}
 .yt-chip svg{width:22px;height:16px;flex:none}
 .yt-chip:hover{border-color:#F43F5E}
+.blog-chip{display:none;align-items:center;gap:6px;height:40px;padding:0 13px 0 9px;border-radius:999px;text-decoration:none;border:1px solid rgba(3,199,90,.55);background:rgba(3,199,90,.08);color:#DCFCE7;font-size:14px;font-weight:700;letter-spacing:-.02em;white-space:nowrap;margin-right:6px}
+.blog-chip svg{width:20px;height:20px;flex:none}
+.blog-chip:hover{border-color:#03C75A}
+.btn-blog{background:rgba(3,199,90,.08);color:#DCFCE7;border:1.5px solid rgba(3,199,90,.55)}
+.btn-blog:hover{border-color:#03C75A}
 .nav-desktop,.header .header-cta{display:none}
 .sheet{position:fixed;inset:var(--header-h) 0 0 0;background:var(--bg-1);z-index:49;padding:12px 20px 32px;overflow:auto;display:none}
 .sheet.open{display:block}
 .sheet a.item{display:flex;align-items:center;gap:10px;min-height:58px;border-bottom:1px solid var(--line-soft);font-size:18px;font-weight:700;text-decoration:none;color:var(--text)}
 .sheet a.item::after{content:"›";color:var(--label);font-size:22px;margin-left:auto}
+.sheet a.item.ai{color:#FDE68A;background:rgba(245,158,11,.10);border:1px solid rgba(251,191,36,.45);border-radius:12px;padding:0 12px;margin:4px 0 8px}
+.sheet a.item.ai::after{color:#FBBF24}
 .sheet .ai-tag{font-size:12px;font-weight:800;background:var(--amber-grad);color:#1A1205;border-radius:6px;padding:2px 7px}
 .sheet .sheet-cta{margin-top:24px;display:grid;gap:10px}
+.sheet-pair{display:grid;grid-template-columns:1fr 1fr;gap:10px}
 
 
 /* ---------- 첫 화면 (가운데 정렬) ---------- */
@@ -101,16 +109,31 @@ button,input,select,textarea{font:inherit;color:inherit;letter-spacing:inherit}
 .hero .lead{font-size:16px;color:var(--text-2);margin:0 auto 20px;max-width:34em;text-wrap:balance}
 .hero .lead strong{color:var(--text);font-weight:700}
 /* 3개 버튼: 같은 크기·같은 모양, 한 줄 */
-.hero-btns{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;width:fit-content;max-width:100%;margin:0 auto}
-.hbtn{display:flex;flex-direction:row;align-items:center;justify-content:flex-start;gap:9px;min-height:54px;padding:8px 16px 8px 13px;border-radius:16px;text-decoration:none;text-align:left;letter-spacing:-.03em;white-space:nowrap;border:1px solid rgba(255,255,255,.35);transition:box-shadow .2s}
-.hbtn .t{display:flex;flex-direction:column;line-height:1.2}
-.hbtn .t b{font-size:15px;font-weight:800}
-.hbtn .t small{font-size:12px;font-weight:600;opacity:.85;margin-top:1px}
-.hbtn svg{width:24px;height:24px;flex:none}
-.hbtn-main{background:var(--indigo-grad);color:#fff;box-shadow:var(--indigo-ring)}
-.hbtn-ai{background:var(--amber-grad);color:#1A1205;box-shadow:var(--amber-glow)}
-.hbtn-kakao{background:#FEE500;color:#191600;border-color:#FEE500;box-shadow:0 4px 14px rgba(254,229,0,.22)}
-.hbtn-ig{color:#fff;border:1.5px solid transparent;background:linear-gradient(135deg,#1A1424,#141428) padding-box,linear-gradient(45deg,#FEDA75,#FA7E1E,#D62976,#962FBF,#4F5BD5) border-box;box-shadow:0 4px 16px rgba(214,41,118,.25)}
+.hero-btns{display:grid;gap:10px;width:100%;max-width:440px;margin:0 auto}
+/* AI 고교추천: 단독 대표 버튼 */
+.ai-cta{position:relative;display:flex;align-items:center;justify-content:center;gap:10px;min-height:62px;margin-top:8px;padding:12px 44px 12px 18px;border-radius:18px;text-decoration:none;
+  background:var(--amber-grad);color:#1A1205;border:1px solid rgba(255,255,255,.45);font-size:17.5px;font-weight:900;letter-spacing:-.03em;white-space:nowrap;
+  box-shadow:0 0 0 3px rgba(251,191,36,.18),0 8px 26px rgba(245,158,11,.45);overflow:visible;isolation:isolate}
+.ai-cta svg{width:22px;height:22px;flex:none}
+.ai-cta .arr{position:absolute;right:18px;top:50%;transform:translateY(-50%);font-size:20px;font-weight:900}
+.ai-cta .badge{position:absolute;left:50%;top:-11px;transform:translateX(-50%);font-size:11.5px;font-weight:800;letter-spacing:0;color:#FBBF24;background:#0A111B;border:1px solid rgba(251,191,36,.7);border-radius:999px;padding:1px 10px;line-height:1.6}
+.ai-cta .shine{position:absolute;inset:0;border-radius:inherit;overflow:hidden;z-index:-1;pointer-events:none}
+.ai-cta .shine::after{content:"";position:absolute;top:0;bottom:0;left:-40%;width:35%;background:linear-gradient(105deg,transparent,rgba(255,255,255,.55),transparent);transform:skewX(-18deg)}
+@media (prefers-reduced-motion:no-preference){
+  .ai-cta .shine::after{animation:aiShine 3.6s ease-in-out infinite}
+  @keyframes aiShine{0%{left:-40%}55%,100%{left:120%}}
+}
+.ai-cta:hover{box-shadow:0 0 0 3px rgba(251,191,36,.3),0 10px 30px rgba(245,158,11,.6)}
+/* 보조 버튼 3개 */
+.hero-sub{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+.hbtn{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;min-height:58px;padding:8px 4px;border-radius:14px;text-decoration:none;text-align:center;letter-spacing:-.03em;white-space:nowrap;font-size:13.5px;font-weight:700;line-height:1.2;color:var(--text);transition:box-shadow .2s,border-color .2s}
+.hbtn svg{width:20px;height:20px;flex:none}
+.hbtn .more{display:none}
+.hbtn-main{background:var(--indigo-grad);color:#fff;border:1px solid rgba(255,255,255,.4);box-shadow:var(--indigo-ring)}
+.hbtn-kakao{background:rgba(254,229,0,.06);border:1px solid rgba(254,229,0,.5)}
+.hbtn-kakao svg{color:#FEE500}
+.hbtn-kakao:hover{border-color:#FEE500}
+.hbtn-ig{border:1px solid transparent;background:linear-gradient(#0E1424,#0E1424) padding-box,linear-gradient(45deg,#FEDA75,#FA7E1E,#D62976,#962FBF,#4F5BD5) border-box}
 .hero .todo{margin-top:8px;font-size:12px}
 .trust{list-style:none;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));margin:0 auto 22px;max-width:420px}
 .trust li{padding:4px 6px;text-align:center}
@@ -298,6 +321,7 @@ details.acc[open]{border-color:rgba(56,189,248,.45);box-shadow:0 0 0 1px rgba(56
 .footer .social{display:flex;flex-wrap:wrap;gap:10px;margin:22px 0}
 .footer .social a{display:inline-flex;align-items:center;gap:8px;min-height:48px;padding:0 18px;border-radius:999px;text-decoration:none;font-weight:800;font-size:15px}
 .footer .social a.kakao{background:#FEE500;color:#191600}
+.footer .social a.blog{background:rgba(3,199,90,.08);border:1px solid rgba(3,199,90,.55);color:#DCFCE7}
 .footer .social a.sq{width:48px;padding:0;justify-content:center;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.16);color:#fff}
 .footer dl{display:grid;grid-template-columns:auto 1fr;gap:6px 14px;padding-top:20px;border-top:1px solid var(--line-soft)}
 .footer dt{color:var(--text-3)}
@@ -313,9 +337,11 @@ details.acc[open]{border-color:rgba(56,189,248,.45);box-shadow:0 0 0 1px rgba(56
 .bottom-bar .btn{min-height:52px;font-size:17px}
 
 
-/* 600px 이상이면 버튼 4개가 한 줄에 들어감 */
+/* 600px 이상: 보조 버튼은 아이콘 + 글자 가로형 */
 @media (min-width:600px){
-  .hero-btns{grid-template-columns:repeat(4,minmax(0,1fr))}
+  .hero-btns{max-width:520px}
+  .hbtn{flex-direction:row;gap:8px;min-height:50px;padding:0 10px;font-size:14.5px}
+  .hbtn .more{display:inline}
 }
 
 /* =====================================================================
@@ -328,14 +354,14 @@ details.acc[open]{border-color:rgba(56,189,248,.45);box-shadow:0 0 0 1px rgba(56
   .bottom-bar{display:none}
   .header .header-cta{display:flex;min-height:46px;font-size:16px;margin-left:0;padding:0 20px}
   .yt-chip{height:44px;font-size:15px;padding:0 14px 0 11px}
+  .blog-chip{height:44px;font-size:15px;padding:0 14px 0 10px}
   .sec{padding:88px 0}
   .h2{font-size:34px}
   .hero{padding:72px 0 72px}
   .hero h1{font-size:56px}
   .brand b{font-size:32px}
   .hero .lead{font-size:17px}
-  .hero-btns{grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
-  .hbtn{min-height:56px}
+  .ai-cta{min-height:64px;font-size:18.5px}
   .trust{max-width:460px;margin-bottom:26px}
   .ai-box{padding:36px}
   .ai-wrap h2{font-size:36px}
@@ -367,7 +393,8 @@ details.acc[open]{border-color:rgba(56,189,248,.45);box-shadow:0 0 0 1px rgba(56
   .nav-desktop{display:flex;gap:4px;margin-right:6px;padding:4px;background:#060B11;border:1px solid var(--line-2);border-radius:12px}
   .nav-desktop a{padding:8px 10px;text-decoration:none;font-weight:700;border-radius:8px;font-size:14.5px;color:#CBD5E1;white-space:nowrap}
   .nav-desktop a:hover{color:#fff;background:rgba(59,130,246,.15)}
-  .nav-desktop a.hl{color:#FDE68A;background:rgba(245,158,11,.12);box-shadow:inset 0 0 0 1px rgba(251,191,36,.45)}
+  .nav-desktop a.hl{color:#1A1205;background:var(--amber-grad);box-shadow:0 2px 10px rgba(245,158,11,.35)}
+  .nav-desktop a.hl:hover{color:#1A1205;background:var(--amber-grad)}
   .sec{padding:112px 0}
   .h2{font-size:42px}
   .desc{font-size:18px}
@@ -377,11 +404,11 @@ details.acc[open]{border-color:rgba(56,189,248,.45);box-shadow:0 0 0 1px rgba(56
   .hero h1{font-size:76px;margin-bottom:18px}
   .hero .eyebrow{font-size:15px;margin-bottom:20px}
   .hero .lead{font-size:19px;margin-bottom:26px;max-width:44em}
-  .hero-btns{gap:12px}
-  .hbtn{min-height:60px;gap:10px;padding:9px 20px 9px 16px}
-  .hbtn svg{width:24px;height:24px}
-  .hbtn .t b{font-size:16px}
-  .hbtn .t small{font-size:12.5px}
+  .hero-btns{max-width:580px;gap:12px}
+  .ai-cta{min-height:68px;font-size:20px}
+  .ai-cta svg{width:24px;height:24px}
+  .hero-sub{gap:10px}
+  .hbtn{min-height:52px;font-size:15px}
   .trust{max-width:520px;margin-bottom:30px}
   .trust b{font-size:24px}
   .trust span{font-size:13px}
@@ -415,6 +442,15 @@ details.acc[open]{border-color:rgba(56,189,248,.45);box-shadow:0 0 0 1px rgba(56
   .ax-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:56px;align-items:start}
   .ax-quote p{font-size:24px}
   .footer-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:56px;align-items:start}
+}
+@media (min-width:1024px){
+  .blog-chip{display:inline-flex}
+}
+@media (min-width:1024px) and (max-width:1199px){
+  .blog-chip{width:44px;padding:0;justify-content:center}
+  .blog-chip .lbl{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+  .yt-chip{padding:0 11px 0 9px}
+  .nav-desktop a{padding:8px 7px;font-size:14px}
 }
 @media (min-width:1200px){
   .nav-desktop a{padding:8px 11px}
