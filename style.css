@@ -141,6 +141,8 @@ button,input,select,textarea{font:inherit;color:inherit;letter-spacing:inherit}
 .hbtn-kakao:hover{border-color:#FEE500}
 .hbtn-ig{border:1px solid transparent;background:linear-gradient(#0E1424,#0E1424) padding-box,linear-gradient(45deg,#FEDA75,#FA7E1E,#D62976,#962FBF,#4F5BD5) border-box}
 .hero .todo{margin-top:8px;font-size:12px}
+/* PC 전용: 휴대폰으로 보기 QR (첫 화면 오른쪽 아래) */
+.pc-qr{display:none}
 .trust{list-style:none;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));margin:0 auto 22px;max-width:420px}
 .trust li{padding:4px 6px;text-align:center}
 .trust li+li{border-left:1px solid var(--line)}
@@ -392,6 +394,13 @@ details.acc[open]{border-color:rgba(56,189,248,.45);box-shadow:0 0 0 1px rgba(56
    PC 1024px 이상 (콘텐츠 최대 폭 1200px)
    ===================================================================== */
 @media (min-width:1024px){
+  .pc-qr{display:flex;flex-direction:column;align-items:center;gap:7px;position:absolute;right:32px;bottom:0;width:150px;padding:12px 12px 11px;
+    background:linear-gradient(180deg,rgba(245,158,11,.10),rgba(14,25,42,.9) 45%);border:1px solid rgba(251,191,36,.5);border-radius:16px;box-shadow:0 0 0 3px rgba(251,191,36,.08),0 12px 28px -14px rgba(0,0,0,.7);text-align:center}
+  .pc-qr .qr-tag{font-size:11px;font-weight:800;color:#1A1205;background:var(--amber-grad);border-radius:999px;padding:1px 9px;letter-spacing:0}
+  .pc-qr b{font-size:13.5px;font-weight:800;color:var(--text);letter-spacing:-.02em;margin-top:-1px}
+  .pc-qr .qr-box{display:block;background:#fff;border-radius:10px;padding:4px}
+  .pc-qr img{display:block;width:104px;height:104px;image-rendering:pixelated}
+  .pc-qr small{font-size:11.5px;line-height:1.45;color:var(--text-2)}
   :root{--header-h:80px}
   body{font-size:17px}
   .menu-btn{display:none}
