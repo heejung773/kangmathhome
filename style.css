@@ -262,10 +262,17 @@ details.acc[open]{border-color:rgba(56,189,248,.45);box-shadow:0 0 0 1px rgba(56
 .hscroll>*{scroll-snap-align:start}
 .book{--a:#38BDF8;border-radius:var(--r-lg);background:var(--panel);overflow:hidden;display:flex;flex-direction:column;border:1px solid var(--line)}
 .book:nth-child(2){--a:#FBBF24} .book:nth-child(3){--a:#818CF8} .book:nth-child(4){--a:#F87171}
-.book-cover{padding:22px;min-height:150px;display:flex;flex-direction:column;justify-content:flex-end;background:linear-gradient(135deg,color-mix(in srgb,var(--a) 22%,#0C1320) 0%,#0C1320 100%);border-bottom:1px solid color-mix(in srgb,var(--a) 40%,transparent)}
+.book-cover{padding:22px;min-height:398px;display:flex;flex-direction:column;justify-content:center;background:linear-gradient(135deg,color-mix(in srgb,var(--a) 22%,#0C1320) 0%,#0C1320 100%);border-bottom:1px solid color-mix(in srgb,var(--a) 40%,transparent)}
+.book-cover.has-image{justify-content:flex-start}
+/* 블로그의 앞·뒤 표지 원본에서 앞표지를 표시한다. 원본 파일은 그대로 보관. */
+.book-photo{display:block;flex:none;width:164px;aspect-ratio:5/7;margin:0 auto 18px;overflow:hidden;border-radius:3px;box-shadow:0 10px 24px rgba(0,0,0,.3)}
+.book-photo img{width:100%;height:100%;object-fit:cover;object-position:right center}
+.book-photo--portrait img{object-fit:contain;object-position:center}
+.book-photo:focus-visible{outline-offset:5px}
 .book-cover small{font-size:12px;letter-spacing:.14em;font-weight:800;color:var(--a)}
 .book-cover b{font-size:20px;line-height:1.35;margin-top:6px;color:var(--text)}
 .book-cover span{font-size:15px;color:var(--text-2)}
+.book-cover .book-caption{font-size:12px;color:var(--text-3);margin-top:4px}
 .book-body{padding:18px 20px;font-size:15px;color:var(--text-2);flex:1;display:flex;flex-direction:column;gap:8px}
 .book-body .target{font-weight:800;color:var(--a);font-size:14px}
 .book-body a{margin-top:auto;font-weight:800;color:var(--text);text-decoration:none;min-height:44px;display:flex;align-items:center;font-size:15px}
