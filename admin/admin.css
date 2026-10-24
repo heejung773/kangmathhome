@@ -33,7 +33,7 @@ form button:hover { background: #72baff; }
 .g-make   { --accent: #6f9fd8; --accent-rgb: 111,159,216; --accent-text: #86b6f0; }  /* 차분한 파랑 */
 .g-family { --accent: #5fb3a6; --accent-rgb: 95,179,166;  --accent-text: #6fcdbd; }  /* 차분한 청록 */
 .g-site   { --accent: #9a8fd0; --accent-rgb: 154,143,208; --accent-text: #b2a6f0; }  /* 차분한 보라 */
-.g-local  { --accent: #8a9bb2; --accent-rgb: 138,155,178; --accent-text: #a9b9cf; }  /* 회청색 */
+.g-local  { --accent: #e08a7a; --accent-rgb: 224,138,122; --accent-text: #f2a594; }  /* 차분한 산호 */
 
 /* 묶음 제목: 카드 제목(흰색 17px)보다 크고, 묶음색으로 구분 */
 .group-title { display: flex; align-items: center; gap: 10px; margin: 0 0 12px; color: var(--accent-text); font-size: 22px; font-weight: 800; line-height: 1.3; letter-spacing: -.02em; }
@@ -74,12 +74,12 @@ form button:hover { background: #72baff; }
 .status { display: inline-flex; flex-shrink: 0; align-items: center; padding: 2px 9px; border: 1px solid rgba(240,198,96,.6); border-radius: 999px; background: rgba(240,198,96,.14); color: #f5d27f; font-size: 12px; font-weight: 800; line-height: 1.45; letter-spacing: .02em; white-space: nowrap; }
 
 /* 04 내 컴퓨터 작업: 링크 아님 → 점선 + 더 어두운 바탕, 떠오름·↗ 없음 */
-.local-list li { border: 1px dashed rgba(138,155,178,.5); background: #0a1524; }
+.local-list li { border: 1px dashed rgba(var(--accent-rgb), .55); background: #0a1524; }
 .local-list .local-name { color: #e3eaf3; }
-.copy-path { display: inline-flex; align-self: flex-start; align-items: center; gap: 8px; max-width: 100%; margin-top: 4px; padding: 4px 8px; border: 1px solid rgba(155,194,235,.22); border-radius: 6px; background: rgba(255,255,255,.04); color: #c9d4e1; font: inherit; cursor: copy; transition: border-color .15s ease, background-color .15s ease; }
+.copy-path { display: inline-flex; align-self: flex-start; align-items: center; gap: 8px; max-width: 100%; margin-top: 4px; padding: 4px 8px; border: 1px solid rgba(var(--accent-rgb), .4); border-radius: 6px; background: rgba(255,255,255,.04); color: #c9d4e1; font: inherit; cursor: copy; transition: border-color .15s ease, background-color .15s ease; }
 .copy-path code { overflow: hidden; font-family: Consolas, "D2Coding", monospace; font-size: 12.5px; text-overflow: ellipsis; white-space: nowrap; }
-.copy-hint { flex-shrink: 0; color: #9aaabd; font-size: 12px; font-weight: 700; }
-.copy-path:hover { border-color: rgba(190,214,240,.5); background: rgba(255,255,255,.07); }
+.copy-hint { flex-shrink: 0; color: var(--accent-text); font-size: 12px; font-weight: 700; }
+.copy-path:hover { border-color: rgba(var(--accent-rgb), .8); background: rgba(255,255,255,.07); }
 .copy-path:focus-visible { outline: 2px solid #cfe2ff; outline-offset: 2px; }
 .copy-path.copied { border-color: rgba(111,191,143,.7); background: rgba(111,191,143,.12); }
 .copy-path.copied .copy-hint { color: #8fd9aa; }
