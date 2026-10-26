@@ -48,12 +48,12 @@ form button:hover { background: #72baff; }
 .dashboard .logout:hover { background: #29394e; color: #f0f4fa; }
 .groups { --gap: 10.4px; display: flex; flex-wrap: wrap; align-items: flex-start; gap: 23.4px 31.2px; }
 .g-site, .g-local { flex-basis: 100%; }
-/* 영역별로 어두운 색조를 달리하고 채도가 높은 반복 강조선은 사용하지 않는다. */
-.group { --accent: #639fe8; --accent-rgb: 99,159,232; --badge: #294f80; --surface: #1a2d44; --surface-hover: #243c57; --heading: var(--accent); display: flex; flex-direction: column; min-width: 0; max-width: 100%; }
-.g-make { --accent: #e6a3bd; --accent-rgb: 230,163,189; --badge: #704156; --surface: #3b2633; --surface-hover: #4d3242; }
-.g-family { --accent: #4dbd9c; --accent-rgb: 77,189,156; --badge: #235d4d; --surface: #19332e; --surface-hover: #23463d; }
-.g-site { --accent: #aa87d9; --accent-rgb: 170,135,217; --badge: #51406e; --surface: #2c263d; --surface-hover: #3c3351; }
-.g-local { --accent: #d99a58; --accent-rgb: 217,154,88; --badge: #6b4827; --surface: #382d23; --surface-hover: #4a3c2b; }
+/* 어두운 화면 위에 구분되는 중간 밝기의 영역색과 진한 글자를 사용한다. */
+.group { --text: #15202e; --text-muted: #202b39; --accent: #639fe8; --accent-rgb: 99,159,232; --badge: #294f80; --surface: #1a2d44; --surface-hover: #243c57; --heading: var(--accent); display: flex; flex-direction: column; min-width: 0; max-width: 100%; }
+.g-make { --accent: #e6a3bd; --accent-rgb: 230,163,189; --badge: #704156; --surface: #dcafc2; --surface-hover: #e5bed0; }
+.g-family { --accent: #4dbd9c; --accent-rgb: 77,189,156; --badge: #235d4d; --surface: #6faea5; --surface-hover: #85beb6; }
+.g-site { --accent: #aa87d9; --accent-rgb: 170,135,217; --badge: #51406e; --surface: #9e8ebc; --surface-hover: #b0a1cc; }
+.g-local { --accent: #d99a58; --accent-rgb: 217,154,88; --badge: #6b4827; --surface: #c6a165; --surface-hover: #d2b27d; }
 .group-title { display: flex; align-items: center; gap: 11.7px; margin: 0 0 10.4px; color: var(--heading); font-size: 18.2px; font-weight: 700; line-height: 28.6px; letter-spacing: -.02em; }
 .group-title span { display: inline-flex; align-items: center; justify-content: center; min-width: 32.5px; height: 28.6px; border: 1.3px solid rgba(var(--accent-rgb), .4); border-radius: 7.8px; background: var(--badge); color: #e5ebf3; font-size: 13px; font-weight: 800; letter-spacing: .04em; }
 /* 각 상자는 내용 너비만 사용하며 남는 공간으로 늘어나지 않는다. */
@@ -69,16 +69,16 @@ form button:hover { background: #72baff; }
 .link-card strong, .local-name { color: var(--text); font-size: 18.2px; font-weight: 650; line-height: 26px; letter-spacing: -.035em; overflow-wrap: anywhere; }
 .link-card .domain { min-width: 0; color: var(--text-muted); font-size: 14.95px; font-weight: 400; line-height: 19.5px; overflow-wrap: anywhere; }
 .link-card.is-trial .domain { font-size: 14.3px; }
-.ext { position: absolute; top: 13px; right: 11.7px; width: 15.6px; height: 15.6px; color: #93a5ba; transition: color .16s ease; }
+.ext { position: absolute; top: 13px; right: 11.7px; width: 15.6px; height: 15.6px; color: var(--text-muted); transition: color .16s ease; }
 .link-card.is-trial .ext { display: none; }
-.link-card:hover .ext { color: var(--accent); }
+.link-card:hover .ext { color: var(--text); }
 .status { display: inline-flex; flex-shrink: 0; align-items: center; padding: 1.3px 6.5px; border: 1.3px solid #79653e; border-radius: 6.5px; background: #3b3221; color: #d8be87; font-size: 13px; font-weight: 600; line-height: 19.5px; white-space: nowrap; }
 .copy-path { display: inline-flex; align-items: center; justify-content: space-between; gap: 10.4px; width: 100%; min-width: 0; margin: 0; padding: 0; border: 0; border-radius: 3.9px; background: transparent; color: var(--text-muted); font: inherit; text-align: left; cursor: copy; }
 .copy-path code { min-width: 0; font-family: Consolas, "D2Coding", monospace; font-size: 14.95px; line-height: 19.5px; overflow-wrap: anywhere; }
-.copy-hint { flex-shrink: 0; color: #a9b8cb; font-size: 13px; font-weight: 500; }
-.copy-path:hover, .copy-path:hover .copy-hint { color: var(--accent); }
-.copy-path.copied, .copy-path.copied .copy-hint { color: #78c9ad; }
-.copy-path.failed .copy-hint { color: #ffb3a7; }
+.copy-hint { flex-shrink: 0; color: var(--text-muted); font-size: 13px; font-weight: 500; }
+.copy-path:hover, .copy-path:hover .copy-hint { color: var(--text); }
+.copy-path.copied, .copy-path.copied .copy-hint { color: #143f32; }
+.copy-path.failed .copy-hint { color: #6d1827; }
 .link-card:focus-visible, .copy-path:focus-visible, .dashboard .logout:focus-visible { outline: 2.6px solid #90b8e5; outline-offset: 5.2px; }
 @media (max-width: 780px) {
   .admin-shell:has(#dashboard:not([hidden])) { width: calc(100% - 31.2px); padding: 20.8px 0; }
