@@ -46,14 +46,14 @@ form button:hover { background: #72baff; }
 .brand { padding-right: 15.6px; border-right: 1.3px solid #bbcde344; color: #bbcde3; font-size: 13px; font-weight: 800; letter-spacing: .15em; }
 .dashboard .logout { flex-shrink: 0; padding: 10.4px 15.6px; border: 1.3px solid #405066; border-radius: 10.4px; background: #1c2838; color: #c4cfdd; font-size: 15.6px; font-weight: 600; white-space: nowrap; transition: background-color .16s ease, color .16s ease; }
 .dashboard .logout:hover { background: #29394e; color: #f0f4fa; }
-.groups { --gap: 10.4px; display: flex; flex-wrap: wrap; align-items: flex-start; gap: 23.4px 31.2px; }
+.groups { --gap: 18px; display: flex; flex-wrap: wrap; align-items: flex-start; gap: 28px 40px; }
 .g-site, .g-local { flex-basis: 100%; }
 /* 어두운 화면 위에 구분되는 중간 밝기의 영역색과 진한 글자를 사용한다. */
-.group { --text: #15202e; --text-muted: #202b39; --accent: #639fe8; --accent-rgb: 99,159,232; --badge: #294f80; --surface: #1a2d44; --surface-hover: #243c57; --heading: var(--accent); display: flex; flex-direction: column; min-width: 0; max-width: 100%; }
-.g-make { --accent: #e6a3bd; --accent-rgb: 230,163,189; --badge: #704156; --surface: #dcafc2; --surface-hover: #e5bed0; }
-.g-family { --accent: #4dbd9c; --accent-rgb: 77,189,156; --badge: #235d4d; --surface: #6faea5; --surface-hover: #85beb6; }
-.g-site { --accent: #aa87d9; --accent-rgb: 170,135,217; --badge: #51406e; --surface: #9e8ebc; --surface-hover: #b0a1cc; }
-.g-local { --accent: #d99a58; --accent-rgb: 217,154,88; --badge: #6b4827; --surface: #c6a165; --surface-hover: #d2b27d; }
+.group { --text: #101824; --text-muted: #182230; --accent: #639fe8; --accent-rgb: 99,159,232; --badge: #294f80; --surface: #1a2d44; --surface-hover: #243c57; --heading: var(--accent); display: flex; flex-direction: column; min-width: 0; max-width: 100%; }
+.g-make { --accent: #e6a3bd; --accent-rgb: 230,163,189; --badge: #704156; --surface: #cba2b3; --surface-hover: #d5adbe; }
+.g-family { --accent: #4dbd9c; --accent-rgb: 77,189,156; --badge: #235d4d; --surface: #669f97; --surface-hover: #72aba3; }
+.g-site { --accent: #aa87d9; --accent-rgb: 170,135,217; --badge: #51406e; --surface: #9183ad; --surface-hover: #9e90b9; }
+.g-local { --accent: #d99a58; --accent-rgb: 217,154,88; --badge: #6b4827; --surface: #b6945d; --surface-hover: #c1a06a; }
 .group-title { display: flex; align-items: center; gap: 11.7px; margin: 0 0 10.4px; color: var(--heading); font-size: 18.2px; font-weight: 700; line-height: 28.6px; letter-spacing: -.02em; }
 .group-title span { display: inline-flex; align-items: center; justify-content: center; min-width: 32.5px; height: 28.6px; border: 1.3px solid rgba(var(--accent-rgb), .4); border-radius: 7.8px; background: var(--badge); color: #e5ebf3; font-size: 13px; font-weight: 800; letter-spacing: .04em; }
 /* 각 상자는 내용 너비만 사용하며 남는 공간으로 늘어나지 않는다. */
@@ -77,8 +77,8 @@ form button:hover { background: #72baff; }
 .copy-path code { min-width: 0; font-family: Consolas, "D2Coding", monospace; font-size: 14.95px; line-height: 19.5px; overflow-wrap: anywhere; }
 .copy-hint { flex-shrink: 0; color: var(--text-muted); font-size: 13px; font-weight: 500; }
 .copy-path:hover, .copy-path:hover .copy-hint { color: var(--text); }
-.copy-path.copied, .copy-path.copied .copy-hint { color: #143f32; }
-.copy-path.failed .copy-hint { color: #6d1827; }
+.copy-path.copied, .copy-path.copied .copy-hint { color: #103326; }
+.copy-path.failed .copy-hint { color: #581421; }
 .link-card:focus-visible, .copy-path:focus-visible, .dashboard .logout:focus-visible { outline: 2.6px solid #90b8e5; outline-offset: 5.2px; }
 @media (max-width: 780px) {
   .admin-shell:has(#dashboard:not([hidden])) { width: calc(100% - 31.2px); padding: 20.8px 0; }
@@ -86,7 +86,7 @@ form button:hover { background: #72baff; }
   .dashboard-top { gap: 13px; margin-bottom: 26px; padding-bottom: 20.8px; }
   .dashboard h1 { flex-direction: column; align-items: flex-start; gap: 3.9px; padding: 10.4px 14.3px; font-size: 26px; }
   .brand { padding: 0; border: 0; font-size: 13px; }
-  .groups { gap: 23.4px; }
+  .groups { gap: 28px; }
   .group-title { font-size: 16.9px; }
 }
 @media (max-width: 420px) {
