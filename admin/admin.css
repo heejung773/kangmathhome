@@ -50,7 +50,7 @@ form button:hover { background: #72baff; }
 .g-site, .g-local { flex-basis: 100%; }
 /* 영역별로 어두운 색조를 달리하고 채도가 높은 반복 강조선은 사용하지 않는다. */
 .group { --accent: #639fe8; --accent-rgb: 99,159,232; --badge: #294f80; --surface: #1a2d44; --surface-hover: #243c57; --heading: var(--accent); display: flex; flex-direction: column; min-width: 0; max-width: 100%; }
-.g-make { --accent: #639fe8; --accent-rgb: 99,159,232; --badge: #294f80; --surface: #1a2d44; --surface-hover: #243c57; }
+.g-make { --accent: #e6a3bd; --accent-rgb: 230,163,189; --badge: #704156; --surface: #3b2633; --surface-hover: #4d3242; }
 .g-family { --accent: #4dbd9c; --accent-rgb: 77,189,156; --badge: #235d4d; --surface: #19332e; --surface-hover: #23463d; }
 .g-site { --accent: #aa87d9; --accent-rgb: 170,135,217; --badge: #51406e; --surface: #2c263d; --surface-hover: #3c3351; }
 .g-local { --accent: #d99a58; --accent-rgb: 217,154,88; --badge: #6b4827; --surface: #382d23; --surface-hover: #4a3c2b; }
